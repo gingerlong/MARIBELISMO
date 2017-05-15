@@ -1001,6 +1001,24 @@ such tht each inner vertex $w\in W$ has degree at least $3$ and
 there is exactly one adjacent leaf $v$ to $w$ with $\lambda(wv)=0$ 
 while all other edges $e$ in $T$ have label $\lambda(e)=1$. 
 
+\begin{figure}
+\begin{tabular}{lcr}
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth]{bijection.eps}
+\end{center} 
+\end{minipage} & & 
+\begin{minipage}{0.4\textwidth}
+  \caption{\rev{Illustration of the bijection $\varphi$. It contracts, at
+      each interior vertex (white) of $(T,\lambda)$ the unique $0$-edge and
+      transfers $y\in X$ as vertex label at the interior vertex of $Q$.
+      Leafs in $(T,\lambda)$ with incident to $1$-edges remain unchanged.
+      The inverse map $\varphi^{-1}$ is given by Algorithm~\ref{alg:Q}.}}
+  \label{fig:bijection}
+\end{minipage}
+\end{tabular}
+\end{figure}
+
 \begin{lemma}
 	The map  $\varphi : \mathcal{T} \to  \mathbb{T}$ with \[\varphi: (T,\lambda)\ \mapsto Q, \] whenever
 	$V(Q)=L(T)$ and  
@@ -1016,6 +1034,10 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 \begin{proof}
 	algo -- edge-contr gives identity .. 	
 \end{proof}
+
+\rev{The bijection is illustrated in Fig.~\ref{fig:bijection}.}
+
+
 
 \begin{lemma}
 	$(T,\lambda) \in \mathcal{T}$ explains $Q= \varphi^{-1}((T,\lambda))$
