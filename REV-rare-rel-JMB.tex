@@ -1000,17 +1000,68 @@ Algorithm \ref{alg:Q}.
 \end{algorithmic}
 \end{algorithm}
 
+
+\clearpage
+\begin{thm}
+	Let $X$ be a given set and  
+	$\mathbb{T}$ denote the set of all graphs $G(\Rl)/\Ro = (X,E)$ that are connected.
+	Hence, by Cor.\ \ref{cor:cycle-free}, each element in $\mathbb{T}$ is a tree $Q$
+	with leaf set $L(Q)\subseteq X$.	Let $\mathbb L$ denote the set of leaf sets $L(Q)$, 
+	$Q\in  \mathbb{T}$. 
+%	for which there is a graph in $\mathbb{T}$ with leaf set $\mathbb L$. 
+	
+	Moreover, let $\mathcal{T}$ denote the set of all trees $(T,\lambda)$ with leaf set
+	$V$, inner vertex set $W = V\setminus L$ (where $L\in \mathbb L$), and edge labeling $\lambda$
+	such that for each inner vertex $w\in W$ there is exactly one adjacent leaf $v$
+	with $\lambda(wv)=0$ while all other edges $e$ in $T$ have label $\lambda(e)=1$. 
+	
+	Then, there is a bijection $\varphi : \mathbb{T} \to \mathcal{T}$
+	defined by \[\varphi: G(\Rl)/\Ro \ \mapsto (T,\lambda), \] where
+	$(T,\lambda)$ explains $G(\Rl)/\Ro$. 
+	\label{thm:bijection}
+\end{thm}
+\begin{proof}
+	Let $Q\in \mathbb{T}$. If $Q = (V,E)$ is a single vertex or an edge, then 
+	$L=V$ and, by construction, $(Q,\lambda) \in \mathcal{T}$. Moreover, there 
+	is no other tree $(T,\lambda)\in \mathcal{T}$ that explains $Q$. 
+
+	Let $Q=(V,E)$ have at least one inner vertex. 
+	We construct a tree $(T,\lambda)$ that explains $Q$ and that is contained in
+	$\mathbb{T}$ as in Alg. \ref{alg:Q}.  
+	\TODO{Easy task to verify that ....  $(T,\lambda)\in \mathbb{T}$.} 
+	In paericular, each 	$(T,\lambda)$ must be least-resolved.
+		
+
+	
+
+	First note that any tree $(T,\lambda)$ (independent of being contained in 
+	$\mathcal{T}$) cannot have an inner vertex $w$ and two leaves $v,v'$ such
+	$\lambda(wv) = \lambda(wv') = 0$, as then $v\Ro v'$; contradicting discreteness 
+	of $\Ro$. Hence, at most one edge of an inner vertex $w$ to some leaf can
+	be labeled with $0$. 
+
+
+
+	
+	
+
+\end{proof}
+
+
+\TODO{add least vs min-resolved}
 \begin{thm}
   Let $Q$ be a connected component in $G(\Rl)/\Ro$ with vertex set $X$.
   Then the tree $T(Q)$ constructed in Algorithm~\ref{alg:Q} is the unique
-  least resolved tree that explains $Q$.
+  least resolved tree that explains $Q$ and, therefore, a minimally resolved tree
   \label{thm:connComp}
 \end{thm}
 \begin{proof}
 	
-
-
 	
+
+
+
+
   \remove{old below}
   We proceed by induction on the number of vertices $|X|=n$.  For $n=1$ and
   $n=2$ there is nothing to show, since by construction $T(Q)=Q$ and $Q$
