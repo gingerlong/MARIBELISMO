@@ -995,9 +995,9 @@ Algorithm \ref{alg:Q}.
 \end{algorithmic}
 \end{algorithm}
 
-Let $\mathbb{T}$ be all unlabeled trees
-and $\mathcal{T}$ denote the set of all edge-labeled 0-1-trees $(T,\lambda)$ 
-such tht each inner vertex $w\in W$ has degree at least $3$ and 
+Let $\mathbb{T}$ the set of all tree with vertex set $X$ but no edge-labels
+and $\mathcal{T}$ denote the set of all edge-labeled 0-1-trees $(T,\lambda)$ with
+leaf set $X$ such that each inner vertex $w\in W$ has degree at least $3$ and 
 there is exactly one adjacent leaf $v$ to $w$ with $\lambda(wv)=0$ 
 while all other edges $e$ in $T$ have label $\lambda(e)=1$. 
 
@@ -1032,7 +1032,16 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 	\label{lem:bijection}
 \end{lemma}
 \begin{proof}
-	algo -- edge-contr gives identity .. 	
+	We show first that $\varphi$ and $\varphi^{-1}$ are a maps.  
+	Clearly, $\varphi$ is a map, since the edge-contraction 
+	is well-defined and leads to exactly one tree in $\mathbb{T}$. 
+	For $\varphi^{-1}$ we construct $(T,\lambda)$ from $Q$
+	as in Algorithm \ref{alg:Q}. 
+	It is easy to see that  $(T,\lambda) \in  \mathcal{T}$. 
+	Now consider $T^*$ obtained from  $(T,\lambda)$ by 
+	contracting all edges labeled $0$. .. We need to show that 
+	$T^* \simeq Q$.  ... 
+ 	
 \end{proof}
 
 \rev{The bijection is illustrated in Fig.~\ref{fig:bijection}.}
@@ -1040,9 +1049,50 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 
 
 \begin{lemma}
-	$(T,\lambda) \in \mathcal{T}$ explains $Q= \varphi^{-1}((T,\lambda))$
-	and $(T,\lambda)$ is the unique minimally resolved tree for $Q$.  
+	Let $(T,\lambda) \in \mathcal{T}$ and $Q= \varphi((T,\lambda))$.
+	If $Q$ is considered as a graph $G(\Rl)/\Ro$ with vertex set $X$, then 
+	 $(T,\lambda)$ is the unique minimally resolved tree that explains $Q$.  
 \end{lemma}
+\begin{proof}
+	We start with showing that 	$(T,\lambda)$  explains $Q$. 
+	Let $v,w\in X$ and assume that that there is exactly a single $1$
+	along the path from $v$ to $w$ in $(T,\lambda)$. 
+	Hence, after contracting all edges labeled $0$ we see 
+	that $vw\in E(T^*)$ where $T^* \simeq Q$	 and
+	thus $v\Rl w$. 
+	For the converse, observe first that no path between any two vertices 
+	in $(T,\lambda)$ can have only 0-edges (by construction). 
+	Thus, assume that there is more than one $1$
+	on the path between $v$ and $w$. Hence, after edge
+	after contracting all edges labeled $0$ we see that there is
+	still a path in the tree $T^*$ from  $v$ to $w$
+	with more than one edge. Since $T^* \simeq Q$, we have 
+	$vw\not \in E(Q)$ and therefore, $v\not\Rl w$. 
+	Therefore, $(T,\lambda)$ explains $Q$. 
+
+	We show first that 	 $(T,\lambda)$ is a least resolved  
+	tree that explains $Q$. Assume for contradiction that there is 
+	an edge $vw$ that can be contracted. First observe that neither
+	$v$ nor $w$ can be a leaf, as otherwise contraction of this edge
+	would lead to a loss of information of the particular leaf $v$, resp., $w$. 
+	Hence, both $v$ and $w$ must be inner vertices. 
+	Both $v$ and $w$ have, by construction, an adjacent leave $v'\in X$ and $w'\in X$, 
+	respectively, such that $\lambda(vv') = \lambda(ww') = 0$. However, 
+	contracting  $vw$ would immediately lead to $v'\Ro w'$; a contradiction 
+	since $\Ro$ is discrete in $Q=G(\Rl)/\Ro$. 
+	Hence, $(T,\lambda)$ is a least resolved  
+	tree that explains $Q$. 
+ -- due to bijkection -- its a unique least tree .. since 
+	and minimally is also least resolved -- a unqiue min. res. trees. 
+
+
+		
+
+	
+
+
+
+\end{proof}	
 
 
 \TODO{add least vs min-resolved}
