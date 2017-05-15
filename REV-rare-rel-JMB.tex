@@ -995,55 +995,37 @@ Algorithm \ref{alg:Q}.
 \end{algorithmic}
 \end{algorithm}
 
+Let $\mathbb{T}$ be all unlabeled trees
+and $\mathcal{T}$ denote the set of all edge-labeled 0-1-trees $(T,\lambda)$ 
+such tht each inner vertex $w\in W$ has degree at least $3$ and 
+there is exactly one adjacent leaf $v$ to $w$ with $\lambda(wv)=0$ 
+while all other edges $e$ in $T$ have label $\lambda(e)=1$. 
 
-\clearpage
-\begin{thm}
-	Let $X$ be a given set and  
-	$\mathbb{T}$ denote the set of all graphs $G(\Rl)/\Ro = (X,E)$ that are connected.
-	Hence, by Cor.\ \ref{cor:cycle-free}, each element in $\mathbb{T}$ is a tree $Q$
-	with leaf set $L(Q)\subseteq X$.	Let $\mathbb L$ denote the set of leaf sets $L(Q)$, 
-	$Q\in  \mathbb{T}$. 
-%	for which there is a graph in $\mathbb{T}$ with leaf set $\mathbb L$. 
-	
-	Moreover, let $\mathcal{T}$ denote the set of all trees $(T,\lambda)$ with leaf set
-	$V$, inner vertex set $W = V\setminus L$ (where $L\in \mathbb L$), and edge labeling $\lambda$
-	such that for each inner vertex $w\in W$ there is exactly one adjacent leaf $v$
-	with $\lambda(wv)=0$ while all other edges $e$ in $T$ have label $\lambda(e)=1$. 
-	
-	Then, there is a bijection $\varphi : \mathbb{T} \to \mathcal{T}$
-	defined by \[\varphi: G(\Rl)/\Ro \ \mapsto (T,\lambda), \] where
-	$(T,\lambda)$ explains $G(\Rl)/\Ro$. 
-	\label{thm:bijection}
-\end{thm}
+\begin{lemma}
+	The map  $\varphi : \mathcal{T} \to  \mathbb{T}$ with \[\varphi: (T,\lambda)\ \mapsto Q, \] whenever
+	$V(Q)=L(T)$ and  
+	$Q\simeq T^*$ where $T^*$ is the underlying unlabeled tree obtained from $(T,\lambda)$ by 
+	contracting all edges labeled $0$, is a bijection.
+%	There is a bijection $\varphi : \mathcal{T} \to  \mathbb{T}$
+%	by putting \[\varphi: (T,\lambda)\ \mapsto Q, \] if 
+%	$V(Q)=L(T)$ and  
+%	$Q\simeq T^*$ where $T^*$ is the underlying unlabeled tree obtained from $(T,\lambda)$ by 
+%	contracting all edges labeled $0$.
+	\label{lem:bijection}
+\end{lemma}
 \begin{proof}
-	Let $Q\in \mathbb{T}$. If $Q = (V,E)$ is a single vertex or an edge, then 
-	$L=V$ and, by construction, $(Q,\lambda) \in \mathcal{T}$. Moreover, there 
-	is no other tree $(T,\lambda)\in \mathcal{T}$ that explains $Q$. 
-
-	Let $Q=(V,E)$ have at least one inner vertex. 
-	We construct a tree $(T,\lambda)$ that explains $Q$ and that is contained in
-	$\mathbb{T}$ as in Alg. \ref{alg:Q}.  
-	\TODO{Easy task to verify that ....  $(T,\lambda)\in \mathbb{T}$.} 
-	In paericular, each 	$(T,\lambda)$ must be least-resolved.
-		
-
-	
-
-	First note that any tree $(T,\lambda)$ (independent of being contained in 
-	$\mathcal{T}$) cannot have an inner vertex $w$ and two leaves $v,v'$ such
-	$\lambda(wv) = \lambda(wv') = 0$, as then $v\Ro v'$; contradicting discreteness 
-	of $\Ro$. Hence, at most one edge of an inner vertex $w$ to some leaf can
-	be labeled with $0$. 
-
-
-
-	
-	
-
+	algo -- edge-contr gives identity .. 	
 \end{proof}
+
+\begin{lemma}
+	$(T,\lambda) \in \mathcal{T}$ explains $Q= \varphi^{-1}((T,\lambda))$
+	and $(T,\lambda)$ is the unique minimally resolved tree for $Q$.  
+\end{lemma}
 
 
 \TODO{add least vs min-resolved}
+ 
+\remove{old below  remove ?? 
 \begin{thm}
   Let $Q$ be a connected component in $G(\Rl)/\Ro$ with vertex set $X$.
   Then the tree $T(Q)$ constructed in Algorithm~\ref{alg:Q} is the unique
@@ -1051,14 +1033,7 @@ Algorithm \ref{alg:Q}.
   \label{thm:connComp}
 \end{thm}
 \begin{proof}
-	
-	
-
-
-
-
-  \remove{old below}
-  We proceed by induction on the number of vertices $|X|=n$.  For $n=1$ and
+	  We proceed by induction on the number of vertices $|X|=n$.  For $n=1$ and
   $n=2$ there is nothing to show, since by construction $T(Q)=Q$ and $Q$
   must have $|X|$ leaves.  For $n=3$ we have $Q=P_3=S_2$.
 
@@ -1148,6 +1123,8 @@ Algorithm \ref{alg:Q}.
   We therefore conclude that for all connected components $Q$ both the
   least resolved tree and its labeling is uniquely determined.  \qed
 \end{proof}
+}
+
 
 We are now in the position to demonstrate how to obtain a least resolved
 tree that explains $G(\Rl)/\Ro$ also in the case that $G(\Rl)/\Ro$ itself
