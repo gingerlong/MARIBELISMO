@@ -581,12 +581,19 @@ resolved trees with this property.
 Note that we do not allow the contraction of terminal edges, i.e., of edges
 incident with leafs. 
 
-\begin{definition}[Least Resolved Tree]
+\rev{
+\begin{definition}[Least and Minimally Resolved Tree]
   A pair $(T,\lambda)$ is \emph{least resolved} for a prescribed relation
   $\Ro$, $\Rl$ or $\Rld$ if no edge contraction leads to a tree
   $(T',\lambda')$ of $(T,\lambda)$ that explains $\Ro$, $\Rl$ or $\Rld$,
   respectively.
+	
+  A pair $(T,\lambda)$ is \emph{minimally resolved} for a prescribed relation
+  $\Ro$, $\Rl$ or $\Rld$ if it has the fewest number of vertices among all trees
+	that 	explain $\Ro$, $\Rl$ or $\Rld$,
+  respectively.
 \end{definition}
+}
 
 \section{The single-1-relation}
 \label{sect:single1}
@@ -1019,6 +1026,7 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 \end{tabular}
 \end{figure}
 
+\rev{
 \begin{lemma}
 	The map  $\varphi : \mathcal{T} \to  \mathbb{T}$ with \[\varphi: (T,\lambda)\ \mapsto Q, \] whenever
 	$V(Q)=L(T)$ and  
@@ -1084,19 +1092,9 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 	tree that explains $Q$. 
  -- due to bijkection -- its a unique least tree .. since 
 	and minimally is also least resolved -- a unqiue min. res. trees. 
-
-
-		
-
-	
-
-
-
 \end{proof}	
+}
 
-
-\TODO{add least vs min-resolved}
- 
 \remove{old below  remove ?? 
 \begin{thm}
   Let $Q$ be a connected component in $G(\Rl)/\Ro$ with vertex set $X$.
@@ -1731,9 +1729,9 @@ $\mathcal{R}_Q$ and therefore, a least resolved tree that explains $Q$.
 We summarize these arguments in
 \begin{cor} 
   Let $Q$ be a connected component in $G(\Rld)/\Ro$. Then $T(Q)$ is
-  obtained from the unique least resolved tree $T(\underline{Q})$ by
+  obtained from the unique \rev{minimally} resolved tree $T(\underline{Q})$ by
   choosing the unique vertex $v$ where all edges incident to $v$ are of the
-  form $vx$ as the root $\rho_Q$.
+  form $vx$ as the root $\rho_Q$. \TODO{$T(Q)$ is minimally resolved}
 \label{cor:Q-root}
 \end{cor}
 
@@ -1754,7 +1752,7 @@ following characterization:
   the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
   \ref{alg:all} for the construction of $T(\underline{Q_i})$ and the choice
   of the root $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$, the tree $T^*
-  = T(G(\Rld)/\Ro))$ is the unique least resolved tree that explains
+  = T(G(\Rld)/\Ro))$ is the unique \rev{minimally} resolved tree that explains
   $G(\Rld)/\Ro$.
   \label{thm:star-tree-dir}
 \end{thm}
