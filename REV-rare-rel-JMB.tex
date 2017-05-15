@@ -13,10 +13,8 @@
 %%\usepackage{scalerel}#
 \usepackage{amsfonts}
 \usepackage{amssymb}
-
-
 \usepackage{natbib}
-\bibliographystyle{abbrvnat}
+\bibliographystyle{mde}
 \setcitestyle{authoryear,open={(},close={)}}
 \let\cite\citep
 
@@ -221,13 +219,30 @@ a single operation. We formalize this problem in the following way. Given a
 relation $\sim$ is there a phylogenetic tree $T$ with an edge labeling
 $\lambda$ (marking the elementary events) such that $x\sim y$ if and only
 if edge labeling along the unique path $\mathbb{P}(x,y)$ for $x$ to $y$ in
-$T$ has a certain prescribed property $\Pi$. In this contribution we will
-primarily be interest in the special case where $\Pi$ is ``a single event
-along the path''. After defining the necessary notation and preliminaries,
-we give a more formal definition of the general problem in
-section~\ref{sect:theory}. Then we give characterizations for the directed
-and the undirected version of the ``single event'' relations. Finally we
-briefly discuss generalizations.
+$T$ has a certain prescribed property $\Pi$. After defining the necessary
+notation and preliminaries, we give a more formal definition of the general
+problem in section~\ref{sect:theory}.
+
+\rev{The graphs defined by path relations on a tree are closely related to
+  \emph{pairwise compatibility graphs} (PCGs). A graph $G =(V,E)$ is a PCG
+  if there is a tree $T$ with leaf set $V$, a positive edge-weight function
+  $w:E(T)\to \mathbb{R}^+$, and two nonnegative real numbers $d_{\min}\le
+  d_{\max}$ such that there is an edge $uv \in E(G)$ if and only if
+  $d_{\min}\leq d_{T,w}(x,y) \leq d_{\max}$, where $d_{T,w}(x,y)$ is the
+  sum of the weights of the edges on the unique path $\mathbb{P}(x,y)$ in
+  $T$. One writes $G = \mathrm{PCG}(T, w, d_{\min} , d_{\max})$.} In this
+contribution we will primarily be interested in the special case where
+$\Pi$ is ``a single event along the path''. \rev{Although PCGs have been
+  studied extensively, see e.g.,
+  \citet{PCGsurvey,YHTR:08,YBR:10,CMPS:13,MR:13,DMR:13}, the questions are
+  different from our motivation and, to out knowledge, there no results
+  have been obtained that would simplify the characterization of the PGCs
+  corresponding to the ``single-1-relation'' in Section~\ref{sect:single1}.
+  PCGs, furthermore are always treated as undirected graphs in the
+  literature.  We also consider a antisymmetric (Section~\ref{sect:1dir})
+  and a general directed (Section~\ref{sect:mixed}) version of the
+  single-1-relation motivated by RGCs with directional information. We
+  close with a brief discussion of possible generalizations.}
 
 \section{Preliminaries}
 \label{sec:prelim}
@@ -451,9 +466,8 @@ properties and their associated relations on $X$ are of practical interest:
 \item[{$x \Rld y$}] if and only if all edges along $\mathbb{P}(u,x)$ are 
   labeled $0$ and exactly one edge along $\mathbb{P}(u,y)$ is labeled $1$,
   where $u=\lca{x,y}$. 
-\item[{$x \Rk y$}] with \rev{$k\geq1$} if and only if and at least $k$ edges \rev{along $\mathbb{P}(x,y)$}
-	are 
-  labeled $1$;
+\item[{$x \Rk y$}] with \rev{$k\geq1$} if and only if and at least $k$
+  edges \rev{along $\mathbb{P}(x,y)$} are labeled $1$;
 \item[{$x \Rd y$}] if the path from $\lca{x,y}$ to $x$ has all edges
   labeled $0$ and there are one or more edges along the path from
   $\lca{x,y}$ to $y$ with a non-zero label. 
@@ -465,8 +479,23 @@ studied in detail in the following section. Its directed variant $\Rld$
 will be investigated in Section~\ref{sect:1dir}. The more general relations
 $\Rk$ and $\Rd$ will be studied \rev{in future work.} %elsewhere.
 
-These (and many other) combinations of labeling systems and path properties
-have \emph{nice properties}:
+\rev{As noted in the introduction there is close relationship between the
+  graphs of path relations introduced above and PCGs. For instance, the
+  single-1-relations correspond to graph of the form $G =
+  \mathrm{PCG}(T,\lambda,1,1)$ for some tree $T$. The exact-$k$ leaf power
+  graph $\mathrm{PCG}(T,\lambda,k,k)$ arise when $\lambda(e)=1$ for all
+  $e\in E(T)$ \cite{BVR:10}. The ``weight function'' $\lambda$, however,
+  may be $0$ in our setting. It is not difficult to transform our weight
+  functions to strictly positive values albeit at the expense of using less
+  ``beautiful'' values of $d_{\min}$ and $d_{\max}$. The literature on the
+  PCG, to our knowledge, does not provide results that would simplify our
+  discussion below. Furthermore, the applications that we have in mind for
+  future work are more naturally phrased in terms boolean labels, such as
+  the ``at least one 1'' relation, or even vector-valued structures. We
+  therefore do not pursue the relationships with PCGs further.}
+
+The combinations of labeling systems and path properties of primary
+interest to us have \emph{nice properties}:
 \begin{itemize}
 \item[(L1)] The label set $\Lambda$ is endowed with a semigroup $\boxplus:
   \Lambda\times\Lambda\to\Lambda$.
@@ -477,7 +506,9 @@ have \emph{nice properties}:
 \end{itemize}
 For instance, we may set $\Lambda=\mathbb{N}$ and use the usual addition
 for $\boxplus$. Then $\Ro$ corresponds to $\Lambda_{\Pi}=\{0\}$, $\Rl$
-corresponds to $\Lambda_{\Pi}=\{1\}$, etc.
+corresponds to $\Lambda_{\Pi}=\{1\}$, etc. \rev{The bounds $d_{\min}$ and
+  $d_{\max}$ in the definition of PCGs of course is just a special case of
+  of the predicate $\Lambda_{\Pi}$.}
 
 We now extend the concept of an X-tree displaying another one to the
 $\Lambda$-labeled case. 
@@ -510,6 +541,9 @@ The definition is designed to ensure that the following property is satisfied:
   $T'$ displayed by $T$ this argument can be repeated for each individual
   leaf removal on the editing path from $T$ to $T'$. \qed
 \end{proof}
+\rev{We note this construction is well behaved for PCGs: it preserves path
+  length, and thus distances between leafs, by summing up the weights of
+  edges whenever a vertex of degree 2 between them is omitted.}
 
 Let us now turn to the properties of the specific relations that are of
 interest in this contribution.
@@ -554,47 +588,8 @@ incident with leafs.
   respectively.
 \end{definition}
 
-\rev{
-\subsection{Related Work}
-
-Our work is closely related to so-called \emph{pairwise compatibility graphs (PCGs)}
-A graph $G = (V, E)$ is a $PCG$ if there exists a tree
-$T$ with leaf set $V$, a positive edge-weight function $w:E(T)\to \mathbb{R}^+$, 
-and two nonnegative real numbers $d_{\min}$
-and $d_{\max}$, $d_{\min}\leq d_{\max}$,
-such that there is an edge $uv \in  E$ if and only if 
- $d_{\min}\leq d_{T,w}(u , v ) \leq d_{\max}$, where
-$d_{T,w}(u , v )$ is the sum of the weights of the edges on the unique path 
-$\mathbb{P}(u,v)$ in $T$. In such a case, we say that $G$ is a $PCG$ of $T$ for 
-$d_{\min}$ and $d_{\max}$; in symbols, $G = PCG(T, w, d_{\min} , d_{\max})$, see 
-\cite{PCGsurvey} for a survey.
-
-The problem of determining whether there is a pair $(T,\lambda)$ that explains
-$G$ can easily be translated into $PCG$s, that is, whether 
-$G = PCG(T, \lambda, 1 , 1)$ for some tree $T$. The latter type of $PCG$s
-is also known as exact-$k$ leaf power graph $PCG(T, \lambda, k, k)$ in case that 
-$\lambda(e)=1$ for all $e\in E$ \cite{BVR:10}.
-
-However, in our setting the 
-``weight function'' $\lambda$ is non-negative and, in particular, we allow to have
-edges with weight $0$. Clearly, it is possible to
-adjust $\lambda$ to become a positive weight function, by replacing each $0$-label
-by an $\epsilon>0$ such that the weights along paths in $T$ where all edges are
-re-labeled with $\epsilon$ never sum up to $1$. Still, the adjusted $\lambda$
-would be very specific. Although very interesting results have been established
-to understand $PCG$s in more detail (see e.g.\ \cite{PCGsurvey,YHTR:08,YBR:10,CMPS:13,MR:13,DMR:13},
-to our knowledge, there are no results that cover such specific edge weights. 
-Moreover, all results for $PCG$s are established for undirected graphs.
-However, we consider here also the general case of directed graphs that reflect the relation $\Rld$. 
-
-Finally, we wish  $\lambda$ to be understood as a (boolean) labeling function rather than a weight
-function, since it might be possible in future to generalize $\lambda: E(T) \to \{0,1^1,1^2,\dots,1^k\}$
-that reflects the (non-)existence of a particular event $1\leq i \leq k$. 
-}
-
-
-
 \section{The single-1-relation}
+\label{sect:single1}
 
 The single-1-relation does not convey any information on the location of
 the root and the corresponding partial order on the tree. Where therefore
@@ -1716,6 +1711,7 @@ following characterization:
 \end{thm}
 
 \section{Mix of symmetric and anti-symmetric relations}
+\label{sect:mixed}
 
 In real data, e.g., in the application to mitochondrial genome
 arrangements, one can expect that the known relationships are in part
@@ -1835,6 +1831,9 @@ substructures be inferred in a rational manner from properties of vertex
 and/or edge labels along the connecting paths in the explaining tree?
 Is this the case at least for labels and predicates satisfying (L1)
   and (L2)?
+
+\TODO{some more links with PCGs?} 
+
 
 \begin{acknowledgements}
   This work was funded by the German Research Foundation (DFG) (Proj.\ No.\
