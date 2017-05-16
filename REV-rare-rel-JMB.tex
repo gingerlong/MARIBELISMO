@@ -244,6 +244,9 @@ $\Pi$ is ``a single event along the path''. \rev{Although PCGs have been
   single-1-relation motivated by RGCs with directional information. We
   close with a brief discussion of possible generalizations.}
 
+\TODO{More detailed statement of the main results ... PFS } 
+
+
 \section{Preliminaries}
 \label{sec:prelim}
 
@@ -303,8 +306,7 @@ inner vertex $v$ are its direct descendants, i.e., vertices $w$ with $vw\in
 E(T)$ s.t.\ that $w$ is further away from the root than $v$.  A rooted or
 unrooted tree that has no vertices of degree two (with the possible
 exception that $T$ is a single, distinguished root node) and leaf set $X$
-is called a \emph{phylogenetic tree $T$ (on $X$)} or simply an
-\emph{X-tree}.
+is called a \emph{phylogenetic tree $T$ (on $X$)}.
 
 Suppose $X'\subseteq X$. A phylogenetic tree $T$ on $X$ \emph{displays} a
 phylogenetic tree $T'$ on $X'$ if $T'$ can be obtained from $T$ by a series
@@ -424,13 +426,13 @@ inference rules: \renewcommand{\theequation}{\roman{equation}}
 \label{sect:theory} 
 
 Let $\Lambda$ be a non-empty set. Throughout this contribution we consider
-an X-tree $T=(V,E)$ with edge-labeling $\lambda \colon E\to \Lambda$. An
-edge $e$ with label $\lambda(e)=k$ will be called a \emph{k-edge}. We
-interpret $(T,\lambda)$ so that a RGC occurs along edge $e$ if and only if
-$\lambda(e)=1$. Let $\Pi$ be a subset of the set of $\Lambda$-labeled
-paths. We interpret $\Pi$ as a property of the path and its labeling. The
-tree $(T,\lambda)$ and the property $\Pi$ together define a binary relation
-$\sim_{\Pi}$ on $X$ by setting
+a \rev{phylogenetic tree} $T=(V,E)$ with edge-labeling $\lambda \colon E\to
+\Lambda$. An edge $e$ with label $\lambda(e)=k$ will be called a
+\emph{k-edge}. We interpret $(T,\lambda)$ so that a RGC occurs along edge
+$e$ if and only if $\lambda(e)=1$. Let $\Pi$ be a subset of the set of
+$\Lambda$-labeled paths. We interpret $\Pi$ as a property of the path and
+its labeling. The tree $(T,\lambda)$ and the property $\Pi$ together define
+a binary relation $\sim_{\Pi}$ on $X$ by setting
 \begin{equation}
   x\sim_{\Pi} y \quad\iff\quad (\mathbb{P}(x,y),\lambda) \in \Pi 
 \end{equation} 
@@ -439,10 +441,10 @@ vertex set $X$ and edges $xy\in E(G(\sim_{\Pi}))$ if and only if
 $x\sim_{\Pi} y$.
 
 \begin{definition}
-  Let $(T,\lambda)$ be a $\Lambda$-labeled X-tree with leaf set $L(T)$ and 
-  let $G$ be a graph with vertex set $L(T)$. We say that 
-  \emph{$(T,\lambda)$ explains $G$ (w.r.t.\ to the path property $\Pi$)}
-  if $G=G(\sim_{\Pi})$.
+  Let $(T,\lambda)$ be a $\Lambda$-labeled phylogenetic tree with leaf set
+  $L(T)$ and let $G$ be a graph with vertex set $L(T)$. We say that
+  \emph{$(T,\lambda)$ explains $G$ (w.r.t.\ to the path property $\Pi$)} if
+  $G=G(\sim_{\Pi})$.
 \end{definition}
 For simplicity we also say ``$(T,\lambda)$ explains $\sim$'' for the binary
 relation $\sim$.
@@ -454,10 +456,11 @@ that explains $G$? Furthermore, we ask for a characterization of the class
 of graph that can be explained by edge-labeled trees and a given predicate
 $\Pi$.
 
-A straightforward biological interpretation of the edge labeling $\lambda$
-is that a certain type of evolutionary event has occurred along $e$ if and
-only if $\lambda(e)=1$. This suggests that in particular the following path
-properties and their associated relations on $X$ are of practical interest:
+A straightforward biological interpretation of an edge labeling
+\rev{$\lambda: E\to \{0,1\}$} is that a certain type of evolutionary event
+has occurred along $e$ if and only if $\lambda(e)=1$. This suggests that in
+particular the following path properties and their associated relations on
+$X$ are of practical interest:
 \begin{itemize}
 \item[{$x \Ro y$}] if and only if all edges in $\mathbb{P}(x,y)$ are
   labeled $0$; For convenience we set $x \Ro x$ for all $x\in X$.
@@ -501,8 +504,10 @@ interest to us have \emph{nice properties}:
   \Lambda\times\Lambda\to\Lambda$.
 \item[(L2)] There is a subset $\Lambda_{\Pi}\subseteq\Lambda$ of labels
   such that $(\mathbb{P}(x,y),\lambda) \in \Pi$ if and only if
-  $\lambda(\mathbb{P}(x,y)):=\boxplus_{e\in\mathbb{P}(x,y)}\lambda(e)$ or 
-  $\lambda(\mathbb{P}(x,y)):=\boxplus_{e\in\mathbb{P}(\lca{x,y},y)}\lambda(e)$.
+  $\lambda(\mathbb{P}(x,y)):=\boxplus_{e\in\mathbb{P}(x,y)}\lambda(e) \in
+  \rev{\Lambda_{\Pi}}$ or
+  $\lambda(\mathbb{P}(x,y)):=\boxplus_{e\in\mathbb{P}(\lca{x,y},y)}\lambda(e)
+  \rev{\in \Lambda_{\Pi}}$.
 \end{itemize}
 For instance, we may set $\Lambda=\mathbb{N}$ and use the usual addition
 for $\boxplus$. Then $\Ro$ corresponds to $\Lambda_{\Pi}=\{0\}$, $\Rl$
@@ -510,13 +515,15 @@ corresponds to $\Lambda_{\Pi}=\{1\}$, etc. \rev{The bounds $d_{\min}$ and
   $d_{\max}$ in the definition of PCGs of course is just a special case of
   of the predicate $\Lambda_{\Pi}$.}
 
-We now extend the concept of an X-tree displaying another one to the
-$\Lambda$-labeled case. 
+We now extend the concept of a \rev{phylogenetic tree} displaying another
+one to the $\Lambda$-labeled case.
 \begin{definition}
-  Let $(T,\lambda)$ and $(T',\lambda')$ be two X-trees with $L(T')\subseteq
-  L(T)$. Then $(T,\lambda)$ displays $(T',\lambda')$ if (i) $T$ displays
-  $T'$ and (ii) $(\mathbb{P}_{T}(x,y),\lambda) \in \Pi$ if and only if
-  $(\mathbb{P}_{T'}(x,y),\lambda) \in \Pi$ for all $x,y\in L(T')$.
+  Let $(T,\lambda)$ and $(T',\lambda')$ be two \rev{phylogenetic trees}
+  with $L(T')\subseteq L(T)$. Then $(T,\lambda)$ displays $(T',\lambda')$
+  \rev{w.r.t.\ a path property $\Pi$} if (i) $T$ displays $T'$ and (ii)
+  $(\mathbb{P}_{T}(x,y),\lambda) \in \rev{\Lambda_{\Pi}}$ if and only if
+  $(\mathbb{P}_{T'}(x,y),\rev{\lambda'}) \in \rev{\Lambda_{\Pi}}$ for all
+  $x,y\in L(T')$.
 \end{definition} 
 The definition is designed to ensure that the following property is satisfied:
 \begin{lemma}
@@ -531,7 +538,7 @@ The definition is designed to ensure that the following property is satisfied:
   $\lambda'(e)=\lambda(e')\boxplus\lambda(e'')$ whenever $e$ is the edge
   resulting from suppressing the interior vertex between $e'$ and $e''$.
   If $T'$ is displayed by $T$ then $(T',\lambda')$ is displayed by
-  $(T,\lambda)$.
+  $(T,\lambda)$ \rev{(w.r.t.\ any path property $\Pi$).}
 \end{lemma}
 \begin{proof} 
   Suppose $T'$ is obtained from $T$ be removing a single leaf $w$. By
@@ -604,10 +611,10 @@ regard $T$ as unrooted in this section.
 
 \begin{lemma}
   \label{lem:notriangle}
-  Let $(T,\lambda)$ be an edge-labeled X-tree with resulting relations
-  $\Ro$ and $\Rl$ over $X$.  Assume that $A,B$ are distinct cliques in
-  $G(\Ro)$ and suppose $x\Rl y$ where $x\in A$ and $y\in B$. Then $x'\Rl
-  y'$ holds for all $x'\in A$ and $y'\in B$.
+  Let $(T,\lambda)$ be an edge-labeled \rev{phylogenetic tree with leaf set
+    $X$ and} resulting relations $\Ro$ and $\Rl$ over $X$.  Assume that
+  $A,B$ are distinct cliques in $G(\Ro)$ and suppose $x\Rl y$ where $x\in
+  A$ and $y\in B$. Then $x'\Rl y'$ holds for all $x'\in A$ and $y'\in B$.
 \end{lemma}
 \begin{proof}
   First, observe that $\mathbb{P}(x',y') \subseteq
@@ -783,11 +790,11 @@ Next we analyze the effect of edge contractions in $T$.
 
 \begin{lemma}
   Let $(T,\lambda)$ explain $G(\Rl)/\Ro$ and let $(T',\lambda')$ be the
-  result of contracting an edge $e$ in $T$. If $\lambda(e)=0$ then $(T',\lambda')$
-  explains $G(\Rl)/\Ro$. If $G(\Rl)/\Ro$ is connected and $\lambda(e)=1$
-  then $(T',\lambda')$ does not explain $G(\Rl)/\Ro$.  In particular, for
-  connected graphs $G(\Rl)/\Ro$, the tree $(T,\lambda)$ is least resolved
-  if and only if all 0-edge are incident to leaves.
+  result of contracting an \rev{inner} edge  $e$ in $T$. If $\lambda(e)=0$
+  then $(T',\lambda')$ explains $G(\Rl)/\Ro$. If $G(\Rl)/\Ro$ is connected
+  and $\lambda(e)=1$ then $(T',\lambda')$ does not explain $G(\Rl)/\Ro$.
+  In particular, for connected graphs $G(\Rl)/\Ro$, the tree $(T,\lambda)$
+  is least resolved if and only if all 0-edge are incident to leaves.
 \end{lemma}
 \begin{proof}
   Let $\Rl_T$, $\Ro_T$, $\Rl_{T'}$, and $\Ro_{T'}$ be the relations
@@ -971,8 +978,6 @@ elegant proof of Lemma \ref{lem:cycle-free} and Corollary
   contain a cycle.
 \qed\end{proof}
 
-******* END REMOVAL old Proof *********** }
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.15\textwidth]{quintuple2.eps}
@@ -984,8 +989,10 @@ elegant proof of Lemma \ref{lem:cycle-free} and Corollary
 Partially overlapping paths can be understood in terms of individual paths
 as in Figure~\ref{fig:quint2}.  Let $Q$ be a connected component in
 $G(\Rl)/\Ro$ with vertex set $X$.  The example of Figure~\ref{fig:quint2}
-motivates to construct an X-tree $T(Q)$ from the tree $Q$ as outlined in
-Algorithm \ref{alg:Q}.
+motivates to construct a \rev{phylogenetic tree $T(Q)$ with leaf set $X$}
+from the tree $Q$ as outlined in Algorithm \ref{alg:Q}.
+
+******* END REMOVAL old Proof *********** }
 
 \begin{algorithm}
 \caption{Compute $(T(Q), \lambda)$}
@@ -1202,10 +1209,11 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 We are now in the position to demonstrate how to obtain a least resolved
 tree that explains $G(\Rl)/\Ro$ also in the case that $G(\Rl)/\Ro$ itself
 is not connected. To this end, denote by $Q_1,\dots Q_k$ the connected
-components of $G(\Rl)/\Ro$. We can construct an X-tree $T(G(\Rl)/\Ro))$ for
-$G(\Rl)/\Ro$ using Alg.\ \ref{alg:all}. It basically amounts to
-constructing a star $S_k$ with interior vertex $z$, where its leaves are
-identified with the trees $T(Q_i)$.
+components of $G(\Rl)/\Ro$. We can construct a \rev{phylogenetic tree
+  $T(G(\Rl)/\Ro))$ with leaf set $X$} for $G(\Rl)/\Ro$ using Alg.\
+\ref{alg:all}. It basically amounts to constructing a star $S_k$ with
+interior vertex $z$, where its leaves are identified with the trees
+$T(Q_i)$.
 
 \begin{algorithm}
 \caption{Compute $(T(G(\Rl)/\Ro)), \lambda)$}
