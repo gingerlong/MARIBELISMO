@@ -593,14 +593,13 @@ incident with leafs.
   A pair $(T,\lambda)$ is \emph{least resolved} for a prescribed relation
   $\Ro$, $\Rl$ or $\Rld$ if no edge contraction leads to a tree
   $(T',\lambda')$ of $(T,\lambda)$ that explains $\Ro$, $\Rl$ or $\Rld$,
-  respectively.
-	
-  A pair $(T,\lambda)$ is \emph{minimally resolved} for a prescribed relation
-  $\Ro$, $\Rl$ or $\Rld$ if it has the fewest number of vertices among all trees
-	that 	explain $\Ro$, $\Rl$ or $\Rld$,
+  respectively.  A pair $(T,\lambda)$ is \emph{minimally resolved} for a
+  prescribed relation $\Ro$, $\Rl$ or $\Rld$ if it has the fewest number of
+  vertices among all trees that explain $\Ro$, $\Rl$ or $\Rld$,
   respectively.
 \end{definition}
-}
+Note that every minimally resolved tree is also least resolved, but not
+\textit{vice versa}.  }
 
 \section{The single-1-relation}
 \label{sect:single1}
@@ -1104,15 +1103,19 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 \end{proof}	
 }
 
-\remove{old below  remove ?? 
+\TODO{least resolved / minimally resolved} 
+
+\rev{As an immediate consequence of these considerations we obtain}
 \begin{thm}
   Let $Q$ be a connected component in $G(\Rl)/\Ro$ with vertex set $X$.
   Then the tree $T(Q)$ constructed in Algorithm~\ref{alg:Q} is the unique
-  least resolved tree that explains $Q$ and, therefore, a minimally resolved tree
+  \rev{minimally} resolved tree that explains $Q$. 
   \label{thm:connComp}
 \end{thm}
+
+\remove{old below  remove ?? 
 \begin{proof}
-	  We proceed by induction on the number of vertices $|X|=n$.  For $n=1$ and
+  We proceed by induction on the number of vertices $|X|=n$.  For $n=1$ and
   $n=2$ there is nothing to show, since by construction $T(Q)=Q$ and $Q$
   must have $|X|$ leaves.  For $n=3$ we have $Q=P_3=S_2$.
 
@@ -1204,8 +1207,6 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 \end{proof}
 }
 
-\TODO{least resolved / minimum resolved} 
-
 We are now in the position to demonstrate how to obtain a least resolved
 tree that explains $G(\Rl)/\Ro$ also in the case that $G(\Rl)/\Ro$ itself
 is not connected. To this end, denote by $Q_1,\dots Q_k$ the connected
@@ -1248,11 +1249,19 @@ $T(Q_i)$.
 \begin{thm}
   Let $Q_1,\dots Q_k$ be the connected components in $G(\Rl)/\Ro$.  Up to
   the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
-  \ref{alg:all}, the tree $T^* = T(G(\Rl)/\Ro))$ is the unique least
-  resolved tree that explains $G(\Rl)/\Ro$.
+  \ref{alg:all}, the tree $T^* = T(G(\Rl)/\Ro))$ is the \rev{unique
+    minimally} resolved tree that explains $G(\Rl)/\Ro$.
   \label{thm:star-tree}
 \end{thm}
 \begin{proof}
+
+  \TODO{This is supposed to he rewritten in a more general way!}
+
+  \TODO{- prove each of the $T(Q_i)$ must be subtrees}
+
+  \TODO{- vertices from different subtrees cannot be indentified}
+
+\remove{
   Since every tree $T(Q_i)$ explains a connected component in $G(\Rl)/\Ro$,
   from the construction of $T^*$ it is easily seen that $T^*$ explains
   $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is the unique least resolved
@@ -1330,6 +1339,7 @@ $T(Q_i)$.
   tree $T^*$ is a least resolved tree that explains $G(\Rl)/\Ro$ and unique
   up to the choice of the inner vertices that are connected to the vertex
   $z$.  \qed
+}
 \end{proof}
 
 \subsection{Binary trees}
@@ -1400,8 +1410,10 @@ exactly one labeling.
     i\leq k$. Denote the resulting forest by $F(v_0)$.
   \item[{2.}] Generate all binary trees with leaves $v_2,\dots, v_k$ as
     described in the previous paragraph.
+    \TODO{how are the edges in these trees labeled}
   \item[{3.}] Each of these binary trees is inserted into a copy of the
-    forest $F(v_0)$ by identify $v_i$ and $v_i'$ for all $1\leq i\leq k$.
+    forest $F(v_0)$ by \rev{identifying} $v_i$ and $v_i'$ for all $1\leq
+    i\leq k$.
   \end{itemize}
   For a given least resolved tree $T$ this yields the set of all
   $\prod_{v_0} t(\mathrm{deg}(v_0))$ pairwise distinct binary trees, where
@@ -1434,12 +1446,12 @@ Corollary that characterizes the condition that $Q$ cannot be explained by
 a binary tree.
 \begin{cor}
   $G(\Rl)/\Ro$ cannot be explained by a binary tree if and only if
-  $G(\Rl)/\Ro$ has exactly two connected components.
+  $G(\Rl)/\Ro$ \rev{is a forrest with} exactly two connected components.
 \end{cor}
-The fact that exactly two connected components appear as a special
-  case is the consequence of a conceptually too strict definition of
-  ``binary tree''. If we allow a single ``root vertex'' of degree $2$ in
-  this special case, we no longer have to exclude two-component graphs.
+The fact that exactly two connected components appear as a special case is
+the consequence of a conceptually too strict definition of ``binary
+tree''. If we allow a single ``root vertex'' of degree $2$ in this special
+case, we no longer have to exclude two-component graphs.
 
 \section{The antisymmetric single-1 relation}
 \label{sect:1dir}
@@ -1477,15 +1489,15 @@ $\underline{G(\Rld)/\Ro}$ of all connected components in $G(\Rld)/\Ro$ must
 be trees as well.  Moreover, since $\Ro$ is discrete in $G(\Rl)/\Ro$, it is
 also discrete in $G(\Rld)/\Ro$.
 
-Let $Q$ be a connected component in $\underline{G(\Rld)/\Ro}$. If $Q$ is an
-isolated vertex or a single edge there is nothing to show. In either case
-there is only a single tree and the position of its root in uniquely
-determined. Thus we assume that $Q$ contains at least three vertices from
-here on. By construction, any three vertices $x,y,z$ in a connected
-component $Q$ in $G(\Rld)/\Ro$ either induce a disconnected graph, or a
-tree on three vertices.  Let $x,y,z\in V(Q)$ induce such a tree. Then there
-are three possibilities (up to relabeling of the vertices) for the induced
-subgraph contained in $G(\Rld)/\Ro = (V,E)$:
+Let $Q$ be a connected component in $\underline{G(\Rld)/\Ro}$.  \TODO{If
+  $Q$ is an isolated vertex or a single edge there is nothing to show.} In
+either case there is only a single tree and the position of its root in
+uniquely determined. Thus we assume that $Q$ contains at least three
+vertices from here on. By construction, any three vertices $x,y,z$ in a
+connected component $Q$ in $G(\Rld)/\Ro$ either induce a disconnected
+graph, or a tree on three vertices.  Let $x,y,z\in V(Q)$ induce such a
+tree. Then there are three possibilities (up to relabeling of the vertices)
+for the induced subgraph contained in $G(\Rld)/\Ro = (V,E)$:
 \begin{itemize}
 \item[(i)] $xy, yz \in E$ implying that $x\Rld y \Rld z$, 
 \item[(ii)] $yx, yz \in E$ implying that $y\Rld x$ and $y \Rld z$,
@@ -1712,9 +1724,9 @@ a unique vertex $v$ in $Q$ such that no edge ends in $v$.
   contradicting the tree structure of $Q$. Hence, there is at least one
   vertex $v$ so that there is no edge of the form $xv\in E(Q)$.  If there
   are two vertices $v,v'$ so that there are no edges of the form $xv, yv'$
-  then all edges incident to $v,v'$ are of the form $vx, v'y$ that implies
-  that $Q$ is not connected. Thus, there is exactly one vertex $v$ in $Q$
-  such that there is no edge $xv\in E(Q)$.\qed
+  then all edges incident to $v,v'$ are of the form $vx, v'y$ \TODO{that
+    implies that $Q$ is not connected.} Thus, there is exactly one vertex
+  $v$ in $Q$ such that there is no edge $xv\in E(Q)$.\qed
 \end{proof}
 
 By Lemma \ref{lem:unique-v}, for each connected component $Q$ of
@@ -1756,7 +1768,7 @@ least resolved tree for $\mathcal{R}_{G(\Rld)/\Ro}$.
 
 To obtain uniqueness one can apply similar arguments as in the proofs of
 Theorems \ref{thm:connComp} and \ref{thm:star-tree}. This yields the
-following characterization:
+following characterization: \TODO{depends of Thm 3 rewrite!} 
 
 \begin{thm}
   Let $Q_1,\dots Q_k$ be the connected components in $G(\Rld)/\Ro$.  Up to
@@ -1774,15 +1786,16 @@ following characterization:
 In real data, e.g., in the application to mitochondrial genome
 arrangements, one can expect that the known relationships are in part
 directed and in part undirected. Such data are naturally encoded by a
-  relation $\Rld$ with directional information and a relation $\Rlstar$
-  comprising the set of pairs for which it is unknown whether $x\Rld y$,
-  $y\Rld x$, or both are true. The disjoint union $\Rlstar\uplus\Rld$ of
-these two parts can be seen as refinement of a corresponding symmetrized
-relation $x\Rl y$.  Ignoring the directional information one can still
-construct the tree $T(G(\Rl)/\Ro)$.  In general there will be less
-information of the placement of the root in $T(G(\Rlstar\cup\Rld)/\Ro)$
-than with a fully directed edge set. To this end we consider the symmetric
-pairs $(a,b)\in\Rlstar$ as a pair of directed edges $ab$ and $ba$.
+relation $\Rld$ with directional information and a relation $\Rlstar$
+comprising the set of pairs for which it is unknown whether $x\Rld y$,
+$y\Rld x$ are true, \rev{or $x\Rl y$}. \TODO{1* and 1 is the same}. The
+disjoint union $\Rlstar\uplus\Rld$ of these two parts can be seen as
+refinement of a corresponding symmetrized relation $x\Rl y$.  Ignoring the
+directional information one can still construct the tree $T(G(\Rl)/\Ro)$.
+In general there will be less information of the placement of the root in
+$T(G(\Rlstar\cup\Rld)/\Ro)$ than with a fully directed edge set. To this
+end we consider the symmetric pairs $(a,b)\in\Rlstar$ as a pair of directed
+edges $ab$ and $ba$.
 
 Given a tree $T$ we say that a directed edge $xy \in E(T)$ \emph{points
   away from the vertex $v$} if the unique path from from $v$ to $x$ does
@@ -1818,13 +1831,13 @@ either $(x,y)$ or $(y,x)$, from $\Rlstar$.
 \end{lemma}
 \begin{proof}
   If there is a relation $\Rldstar$ that can be displayed by a rooted
-  0/1-edge-labeled tree, then  $G(\Rldstar)/\Ro$ consists of
-  connected components $Q$ where each connected component is a tree
-  composed of maximal directed paths that point away from each
-  other. Hence, for each connected component $Q$ there is the unique vertex
-  $v_Q$ such that all edges incident to $v_Q$ are of the form $v_Qx$ and,
-  in particular, $v_Q$ is a central vertex in $Q$ and thus, in
-  $G(\Rlstar\cup\Rld)/\Ro$.
+  0/1-edge-labeled tree, then $G(\Rldstar)/\Ro$ consists of connected
+  components $Q$ where each connected component is a tree composed of
+  maximal directed paths that point away \TODO{more precise definition of
+    ``points away''} from each other. Hence, for each connected component
+  $Q$ there is the unique vertex $v_Q$ such that all edges incident to
+  $v_Q$ are of the form $v_Qx$ and, in particular, $v_Q$ is a central
+  vertex in $Q$ and thus, in $G(\Rlstar\cup\Rld)/\Ro$.
 
   Conversely, assume that each connected component $Q$ has a central
   vertex $v_Q$. Hence, one can remove all edges that do not point away from
@@ -1853,13 +1866,12 @@ constraints on the possible placements of the root.
 In this contribution we have introduced a class of binary relations
 deriving in a natural way from edge-labeled trees. This construction has
 been inspired by the conceptually similar class of relations induced by
-vertex-labeled trees \cite{HW:17}. 
-The latter have co-graph structure and are closely
-related to orthology and paralogy
-\cite{Hellmuth:13a,Lafond:14,Hellmuth:15a,HW:15}. Defining $x\sim y$ whenever at
-least one 1-edge lies along the path from $x$ to $y$ is related to the
-notion of xenology: the edges labeled 1 correspond to horizontal gene
-transfer events, while the 0-edge encode vertical transmission. In its
+vertex-labeled trees \cite{HW:17}.  The latter have co-graph structure and
+are closely related to orthology and paralogy
+\cite{Hellmuth:13a,Lafond:14,Hellmuth:15a,HW:15}. Defining $x\sim y$
+whenever at least one 1-edge lies along the path from $x$ to $y$ is related
+to the notion of xenology: the edges labeled 1 correspond to horizontal
+gene transfer events, while the 0-edge encode vertical transmission. In its
 simplest setting, this idea can also be combined with vertex labels,
 leading to the directed analog of co-graphs \cite{HSW:16}. Here, we have
 explored an even simpler special case: the existence of a single 1-label
@@ -1868,16 +1880,16 @@ as we have discussed in the introduction.  We have succeeded here in giving
 a complete characterization of the relationships between admissible
 relations, which turned out to be forests, and the underlying phylogenetic
 tree.  Moreover, for all such cases we gave polynomial-time algorithms in
-order to compute the trees that explain the respective relation.  
+order to compute the trees that explain the respective relation.
 
 However, the analysis presented here makes extensive use of the particular
 properties of the single-1 relation and hence does not seem to generalize
-easily to other interesting cases. Horizontal gene transfer, for
-  example, is expressed naturally in terms of the ``at-least-one-1''
-  relation $\Rd$. It is worth noting that $\Rd$ also has properties (L1)
-  and (L2) and hence behaves well w.r.t.\ contraction of the underlying
-  tree and restriction to subsets of leaves. Whether this is sufficient to
-  obtain a complete characterization remains an open question.
+easily to other interesting cases. Horizontal gene transfer, for example,
+is expressed naturally in terms of the ``at-least-one-1'' relation
+$\Rd$. It is worth noting that $\Rd$ also has properties (L1) and (L2) and
+hence behaves well w.r.t.\ contraction of the underlying tree and
+restriction to subsets of leaves. Whether this is sufficient to obtain a
+complete characterization remains an open question.
 
 Several general questions arise naturally. For instance, is there a
 characterization of admissible relations in terms of forbidden subgraphs
