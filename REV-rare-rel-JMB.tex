@@ -31,7 +31,7 @@
 %%%% Abbreviations  
 \newcommand{\rev}[1]{\begingroup\color{blue}#1\endgroup}
 \newcommand{\TODO}[1]{\begingroup\color{red}#1\endgroup}
-\newcommand{\remove}[1]{\begingroup\color{magenta}#1\endgroup}
+\newcommand{\remove}[1]{\begingroup\tiny\color{magenta}#1\endgroup}
 %\newcommand{\PFS}[1]{\begingroup\color{blue}#1\endgroup}
 %%\newcommand{\PFSNEW}[1]{\begingroup\color{violet}#1\endgroup}
 
@@ -909,7 +909,7 @@ $G(\Rl)/\Ro$ must contain a unique quadruple and a corresponding unique
 0/1-labeling of the five edges of the quadruples:
 \begin{equation}
 \label{eq:quadruple}
-  \includegraphics[width=0.6\textwidth]{quadruple.eps}
+  \includegraphics[width=0.15\textwidth]{quadruple.eps}
 \end{equation}
 Conversely, this quadruple explains the $P_4$. This 1-1 correspondence
 propagates to longer paths. A path of length $5$ can be viewed as a
@@ -940,12 +940,14 @@ adjacent to $u_2$ and $u_{n-1}$, respectively, with an edge labeled $1$,
 and $x_i$ adjacent to $u_i$ with an 0-labeled edge for $2\le i\le n-1$.
 \end{lemma}
 Figure~\ref{fig:quintuple} shows the caterpillar $T_5^*$. 
+
 \begin{figure}[t]
   \begin{center}
-    \includegraphics[width=0.75\textwidth]{quintuple.eps}
+    \includegraphics[width=0.15\textwidth]{quintuple.eps}
   \end{center}
-  \caption{Paths in the $\protect\Rl$ relation imply unique split systems.
-  The upper right edge labeled tree is the caterpillar $T_5^*$.}  
+  \caption{\remove{Paths in the $\protect\Rl$ relation imply unique split
+      systems.  The upper right edge labeled tree is the caterpillar
+      $T_5^*$.}}
 \label{fig:quintuple}
 \end{figure}
 The latter results can also be used to establish an alternative and more
@@ -969,14 +971,13 @@ elegant proof of Lemma \ref{lem:cycle-free} and Corollary
   contain a cycle.
 \qed\end{proof}
 
-
 ******* END REMOVAL old Proof *********** }
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.6\textwidth]{quintuple2.eps}
+\includegraphics[width=0.15\textwidth]{quintuple2.eps}
 \end{center}
-\caption{the simplest case of overlapping paths} 
+\caption{\remove{the simplest case of overlapping paths}}
 \label{fig:quint2}
 \end{figure} 
 
@@ -1051,15 +1052,16 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 	$T^* \simeq Q$.  ... 
  	
 \end{proof}
+}
 
 \rev{The bijection is illustrated in Fig.~\ref{fig:bijection}.}
 
 
-
+\rev{
 \begin{lemma}
-	Let $(T,\lambda) \in \mathcal{T}$ and $Q= \varphi((T,\lambda))$.
-	If $Q$ is considered as a graph $G(\Rl)/\Ro$ with vertex set $X$, then 
-	 $(T,\lambda)$ is the unique minimally resolved tree that explains $Q$.  
+  Let $(T,\lambda) \in \mathcal{T}$ and $Q= \varphi((T,\lambda))$.  If $Q$
+  is considered as a graph \mbox{$G(\Rl)/\Ro$} with vertex set $X$, then
+  $(T,\lambda)$ is the unique minimally resolved tree that explains $Q$.
 \end{lemma}
 \begin{proof}
 	We start with showing that 	$(T,\lambda)$  explains $Q$. 
@@ -1195,6 +1197,7 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 \end{proof}
 }
 
+\TODO{least resolved / minimum resolved} 
 
 We are now in the position to demonstrate how to obtain a least resolved
 tree that explains $G(\Rl)/\Ro$ also in the case that $G(\Rl)/\Ro$ itself
