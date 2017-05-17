@@ -272,7 +272,9 @@ all its equivalence classes consist of single vertices.
 
 A tree $T=(V,E)$ is a connected cycle-free undirected graph.  The vertices
 of degree $1$ in a tree are called leaves, all other vertices of $T$ are
-called \emph{inner vertices}. An edge of $T$ is \emph{interior} if both of
+called \emph{inner vertices}. \rev{In case, $T$ is a single vertex graph
+$(\{v\},\emptyset)$, we refer to $v$ as inner vertex and leaf.}
+An edge of $T$ is \emph{interior} if both of
 its end vertices are interior vertices. A \emph{star} $S_m$ with $m$ leaves
 is a tree that has at most one inner vertex. A \emph{path} $P_n$ (on $n$
 vertices) is a tree with two leaves and $n-3$ interior edges.  There is a
@@ -1258,20 +1260,26 @@ $T(Q_i)$.
   \label{thm:star-tree}
 \end{thm}
 \begin{proof}
-	\remove{
   Since every tree $T(Q_i)$ explains a connected component in $G(\Rl)/\Ro$,
   from the construction of $T^*$ it is easily seen that $T^*$ explains
   $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is a least resolved
   tree that explains $G(\Rl)/\Ro$.
         
-  First observe that all leaves of the trees $T(Q_i)$ or the inner vertices
-  of single-vertex trees must be leaves in the tree $T^*$, as otherwise,
-  $T^*$ cannot explain $G(\Rl)/\Ro$.  Hence, leaves or the inner vertices
-  of single-vertex trees $T(Q_i)$ cannot be identified with any other
+ \rev{ First observe that all leaves of the trees $T(Q_i)$ 
+%  or the inner vertices
+%  of single-vertex trees 
+  must be leaves in the tree 
+  $T^*$, as otherwise,
+  $T^*$ cannot explain $G(\Rl)/\Ro$.  Hence, leaves 
+%  or the inner vertices
+%  of single-vertex trees 
+  of $T(Q_i)$ cannot be identified with any other
   vertex of a distinct tree $T(Q_j)$.  Thus, in order to connect these
-  trees inner vertices (except the  inner vertices of single-vertex
-  trees) must be identified or edges and possibly extra vertices must be
-  added.
+  trees inner vertices 
+%  (except the  inner vertices of single-vertex
+%  trees) 
+  must be identified or edges and possibly extra vertices must be
+  added. }
 
   By Theorem \ref{thm:connComp}, every tree $T(Q_i)$ is the unique minimally
   resolved tree for the respective connected component $Q_i$.  However, if
@@ -1280,7 +1288,7 @@ $T(Q_i)$.
   vertex $x_i$.  Note this modification is necessary, since on the one
   hand, leaves cannot be identified with any other vertex of a distinct
   tree $T(Q_j)$ and, on the other hand one cannot insert any edge incident
-  to $v_i$ and $w_i$ to obtain connectedness in $T^*$, otherwise the leaves
+  to $v_i$ and $w_i$ to obtain connectedness in $T^*$, otherwise the leaves $v_i, w_i$
   become inner vertices in $T^*$. Thus, in order to connect this $T(Q_i)$
   to other connected components without loosing the information about the
   leaves $v_i,w_i$ , it is necessary to add this extra vertex $x_i$.  By
@@ -1333,7 +1341,7 @@ $T(Q_i)$.
   an edge $zq'_i$, where $q'_i$ is an arbitrary inner vertex of $T(Q_i)$
   and label all these edges $e$ with $\lambda(e)=1$.  Thus, no two leaves
   $u$ and $w$ of distinct trees are in relation $\Ro$ or $\Rl$. 
- \rev Since we can neither contract any edge in a subtree $T(Q_i)$ and none
+ \rev{Since we can neither contract any edge in a subtree $T(Q_i)$ and none
 	of the edges incident to $z$, 	}
 	the  tree $T^*$ is a least resolved tree that explains $G(\Rl)/\Ro$.  \qed
 %	unique
