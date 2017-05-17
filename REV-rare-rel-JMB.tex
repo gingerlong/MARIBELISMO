@@ -1524,7 +1524,7 @@ Corollary that characterizes the condition that $Q$ cannot be explained by
 a binary tree.
 \begin{cor}
   $G(\Rl)/\Ro$ cannot be explained by a binary tree if and only if
-  $G(\Rl)/\Ro$ \rev{is a forrest with} exactly two connected components.
+  $G(\Rl)/\Ro$ \rev{is a forest with} exactly two connected components.
 \end{cor}
 The fact that exactly two connected components appear as a special case is
 the consequence of a conceptually too strict definition of ``binary
@@ -1800,11 +1800,19 @@ a unique vertex $v$ in $Q$ such that no edge ends in $v$.
   there is at most one edge $xv\in E(Q)$.  If for all vertices $w$ in $Q$
   we would have an edge $xw\in E(Q)$, then $Q$ contains cycles,
   contradicting the tree structure of $Q$. Hence, there is at least one
-  vertex $v$ so that there is no edge of the form $xv\in E(Q)$.  If there
-  are two vertices $v,v'$ so that there are no edges of the form $xv, yv'$
-  then all edges incident to $v,v'$ are of the form $vx, v'y$ \TODO{that
-    implies that $Q$ is not connected.} Thus, there is exactly one vertex
+  vertex $v$ so that there is no edge of the form $xv\in E(Q)$.  
+\rev{  Assume there 
+  are two vertices $v,v'$ so that there are no edges of the form $xv, yv'$, 
+  then all edges incident to $v,v'$ are of the form $vx, v'y$. However, 
+	in this case,  the unique path connecting  $v,v'$ in $Q$ must contain two edges 
+	of the form $aw$, $bw$; a contradiction to   Corollary \ref{cor:edge-pointing}.}
+  Thus, there is exactly one vertex
   $v$ in $Q$ such that there is no edge $xv\in E(Q)$.\qed
+%	If there
+%  are two vertices $v,v'$ so that there are no edges of the form $xv, yv'$
+%  then all edges incident to $v,v'$ are of the form $vx, v'y$ \TODO{that
+%    implies that $Q$ is not connected.} Thus, there is exactly one vertex
+%  $v$ in $Q$ such that there is no edge $xv\in E(Q)$.\qed
 \end{proof}
 
 By Lemma \ref{lem:unique-v}, for each connected component $Q$ of
@@ -1870,29 +1878,39 @@ In real data, e.g., in the application to mitochondrial genome
 arrangements, one can expect that the known relationships are in part
 directed and in part undirected. Such data are naturally encoded by a
 relation $\Rld$ with directional information and a relation $\Rlstar$
-comprising the set of pairs for which it is unknown whether $x\Rld y$,
-$y\Rld x$ are true, \rev{or $x\Rl y$}. \TODO{1* and 1 is the same}. The
+comprising the set of pairs for which it is unknown whether \rev{ one of $x\Rld y$ and
+$y\Rld x$ or $x\Rl y$ are true. Here, $\Rl$ is a subset of $\Rlstar$.}
+The
 disjoint union $\Rlstar\uplus\Rld$ of these two parts can be seen as
 refinement of a corresponding symmetrized relation $x\Rl y$.  Ignoring the
 directional information one can still construct the tree $T(G(\Rl)/\Ro)$.
 In general there will be less information of the placement of the root in
-$T(G(\Rlstar\cup\Rld)/\Ro)$ than with a fully directed edge set. To this
-end we consider the symmetric pairs $(a,b)\in\Rlstar$ as a pair of directed
-edges $ab$ and $ba$.
+$T(G(\Rlstar\cup\Rld)/\Ro)$ than with a fully directed edge set. 
 
-Given a tree $T$ we say that a directed edge $xy \in E(T)$ \emph{points
-  away from the vertex $v$} if the unique path from from $v$ to $x$ does
-not contain $y$. In this case the path from $v$ to $y$ contains $x$.  Note
+\rev{In what follows, we will consider all edges of $G(\Rlstar\cup\Rld)/\Ro$ 
+to be directed, that is, for a symmetric pair $(a,b)\in\Rlstar$ we assume that 
+both directed edges $ab$ and $ba$ are contained in $G(\Rlstar\cup\Rld)/\Ro$.
+Still, for any connected component $Q$ the underlying undirected graph
+$\underline{Q}$ is a tree. 
+}
+Given a component $Q$ we say that a directed edge $xy \in E(Q)$ \emph{points
+ away from the vertex $v$} if the unique  path in $\underline{Q}$ from $v$ to $x$ does
+not contain $y$. In this case the path from $v$ to $y$ must contain $x$.  Note
 that in this way we defined ``pointing away from $v$'' not only for the
-edges incident to $v$, but for all directed edges. Also note that any
-undirected edge in the same connected component with $v$ points away from
-$v$.  A vertex $v$ is a \emph{central vertex} if, for any two distinct
+edges incident to $v$, but for all directed edges. 
+%Also note that any
+%``undirected'' edge 
+% in the same connected component with $v$ points away from
+%$v$.  
+A vertex $v$ is a \emph{central vertex} if, for any two distinct
 vertices $x,y\in V$ that form an edge in $T$, either $xy$ or $yx$ in $T$
 points away from $v$.
 
 As an example consider the tree $a\leftarrow b\rightarrow c \leftrightarrow
-d\rightarrow e$.  There is no edge containing $b$ and $c$ that points away
-from vertex $d$.  Thus $d$ is not central. On the other hand, $b$ is a
+d\rightarrow e$. \rev{ There is only the edge $bc$ containing $b$ and $c$.
+However, $bc$ does not point away from vertex $d$, since the unique path
+from $d$ to $b$ contains $c$.}  
+Thus $d$ is not central. On the other hand, $b$ is a
 central vertex. The only possibility in this example to obtain a valid
 relation $\Rld$ that can be displayed by rooted 0/1-edge-labeled tree is
 provided by removing the edge $dc$, since otherwise Cor.\
@@ -1916,8 +1934,8 @@ either $(x,y)$ or $(y,x)$, from $\Rlstar$.
   If there is a relation $\Rldstar$ that can be displayed by a rooted
   0/1-edge-labeled tree, then $G(\Rldstar)/\Ro$ consists of connected
   components $Q$ where each connected component is a tree composed of
-  maximal directed paths that point away \TODO{more precise definition of
-    ``points away''} from each other. Hence, for each connected component
+  maximal directed paths that point away from each other. 
+  Hence, for each connected component
   $Q$ there is the unique vertex $v_Q$ such that all edges incident to
   $v_Q$ are of the form $v_Qx$ and, in particular, $v_Q$ is a central
   vertex in $Q$ and thus, in $G(\Rlstar\cup\Rld)/\Ro$.
