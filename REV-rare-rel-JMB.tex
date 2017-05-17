@@ -31,11 +31,11 @@
 %%%% Abbreviations  
 \newcommand{\rev}[1]{\begingroup\color{blue}#1\endgroup}
 \newcommand{\TODO}[1]{\begingroup\color{red}#1\endgroup}
-\newcommand{\remove}[1]{\begingroup\tiny\color{magenta}#1\endgroup}
+\newcommand{\remove}[1]{\begingroup\tiny\color{yellow}#1\endgroup}
 %\newcommand{\PFS}[1]{\begingroup\color{blue}#1\endgroup}
 %%\newcommand{\PFSNEW}[1]{\begingroup\color{violet}#1\endgroup}
 
-%%\newcommand{\mh}[1]{\begingroup\color{magenta}#1\endgroup}
+\newcommand{\mh}[1]{\begingroup\color{magenta}#1\endgroup}
 %\newcommand{\mhcomment}[1]{\begingroup\emph{\color{red}#1}\endgroup}
 %\newcommand{\yangjing}[1]{\begingroup\color{green}#1\endgroup}
 %\newcommand{\TRY}[1]{\begingroup\color{violet}#1\endgroup}
@@ -793,7 +793,8 @@ Next we analyze the effect of edge contractions in $T$.
   then $(T',\lambda')$ explains $G(\Rl)/\Ro$. If $G(\Rl)/\Ro$ is connected
   and $\lambda(e)=1$ then $(T',\lambda')$ does not explain $G(\Rl)/\Ro$.
   In particular, for connected graphs $G(\Rl)/\Ro$, the tree $(T,\lambda)$
-  is least resolved if and only if all 0-edge are incident to leaves.
+  is \rev{minimally resolved} 	%least resolved 
+	if and only if all 0-edge are incident to leaves.
 \end{lemma}
 \begin{proof}
   Let $\Rl_T$, $\Ro_T$, $\Rl_{T'}$, and $\Ro_{T'}$ be the relations
@@ -815,7 +816,7 @@ Next we analyze the effect of edge contractions in $T$.
   resulting relation.  Thus no 1-edge can be contracted in $T$ without
   changing $G(\Rl)/\Ro$.
 
-  If $(T,\lambda)$ is least resolved, no edge can be contracted, and thus
+  If $(T,\lambda)$ is \rev{minimally resolved (and thus, least resolved)}, no edge can be contracted, and thus
   no 0-edge can be located in the interior of $T$. For connected
   $G(\Rl)/\Ro$ no interior 1-edge can be contracted in $T$ without changing
   the corresponding $\Rl$ relation. \qed
@@ -1103,7 +1104,7 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 \end{proof}	
 }
 
-\TODO{least resolved / minimally resolved} 
+
 
 \rev{As an immediate consequence of these considerations we obtain}
 \begin{thm}
@@ -1249,22 +1250,18 @@ $T(Q_i)$.
 \begin{thm}
   Let $Q_1,\dots Q_k$ be the connected components in $G(\Rl)/\Ro$.  Up to
   the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
-  \ref{alg:all}, the tree $T^* = T(G(\Rl)/\Ro))$ is the \rev{unique
-    minimally} resolved tree that explains $G(\Rl)/\Ro$.
+  \ref{alg:all}, the tree $T^* = T(G(\Rl)/\Ro))$ is 
+	\mh{I removed unique and minimally -- I don't see it!}
+	\rev{a least} 
+%	the \rev{unique minimally} 
+	resolved tree that explains $G(\Rl)/\Ro$.
   \label{thm:star-tree}
 \end{thm}
 \begin{proof}
-
-  \TODO{This is supposed to he rewritten in a more general way!}
-
-  \TODO{- prove each of the $T(Q_i)$ must be subtrees}
-
-  \TODO{- vertices from different subtrees cannot be indentified}
-
-\remove{
+	\remove{
   Since every tree $T(Q_i)$ explains a connected component in $G(\Rl)/\Ro$,
   from the construction of $T^*$ it is easily seen that $T^*$ explains
-  $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is the unique least resolved
+  $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is a least resolved
   tree that explains $G(\Rl)/\Ro$.
         
   First observe that all leaves of the trees $T(Q_i)$ or the inner vertices
@@ -1272,11 +1269,11 @@ $T(Q_i)$.
   $T^*$ cannot explain $G(\Rl)/\Ro$.  Hence, leaves or the inner vertices
   of single-vertex trees $T(Q_i)$ cannot be identified with any other
   vertex of a distinct tree $T(Q_j)$.  Thus, in order to connect these
-  trees inner vertices (except the the inner vertices of single-vertex
+  trees inner vertices (except the  inner vertices of single-vertex
   trees) must be identified or edges and possibly extra vertices must be
   added.
 
-  By Theorem \ref{thm:connComp}, every tree $T(Q_i)$ is the unique least
+  By Theorem \ref{thm:connComp}, every tree $T(Q_i)$ is the unique minimally
   resolved tree for the respective connected component $Q_i$.  However, if
   $T(Q_i)$ is an edge, i.e., of the form $v_iw_i$ we modify this tree in
   Line \ref{step:edge} to obtain a tree isomorphic to $S_2$ with inner
@@ -1297,7 +1294,8 @@ $T(Q_i)$.
   least resolved tree that explain $G(\Rl)/\Ro$.
         
   We continue to show that one cannot identify inner vertices of different
-  trees $T(Q_i)$ and $T(Q_j)$ to obtain $T^*$.  Let $q'$ and $p'$ be
+  trees $T(Q_i)$ and $T(Q_j)$ to obtain a least resolved tree $T^*$.  
+  Let $q'$ and $p'$ be
   arbitrary inner vertices of $T(Q_i)$ and $T(Q_j)$, respectively. If one
   of the trees, say $T(Q_i)$, consists only of this vertex $q'$, then
   identification of $q'$ and $p'$ leads to the loss of the leaf $q'$ in
@@ -1334,12 +1332,92 @@ $T(Q_i)$.
   $T^*$.  We continue to connect the different trees to $z$ by insertion of
   an edge $zq'_i$, where $q'_i$ is an arbitrary inner vertex of $T(Q_i)$
   and label all these edges $e$ with $\lambda(e)=1$.  Thus, no two leaves
-  $u$ and $w$ of distinct trees are in relation $\Ro$ or $\Rl$.  Since we
-  have to add at least one vertex to obtain connectedness in $T^*$, the
-  tree $T^*$ is a least resolved tree that explains $G(\Rl)/\Ro$ and unique
-  up to the choice of the inner vertices that are connected to the vertex
-  $z$.  \qed
-}
+  $u$ and $w$ of distinct trees are in relation $\Ro$ or $\Rl$. 
+ \rev Since we can neither contract any edge in a subtree $T(Q_i)$ and none
+	of the edges incident to $z$, 	}
+	the  tree $T^*$ is a least resolved tree that explains $G(\Rl)/\Ro$.  \qed
+%	unique
+%  up to the choice of the inner vertices that are connected to the vertex
+%  $z$.  \qed
+%	\remove{
+%  Since every tree $T(Q_i)$ explains a connected component in $G(\Rl)/\Ro$,
+%  from the construction of $T^*$ it is easily seen that $T^*$ explains
+%  $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is the unique least resolved
+%  tree that explains $G(\Rl)/\Ro$.
+%        
+%  First observe that all leaves of the trees $T(Q_i)$ or the inner vertices
+%  of single-vertex trees must be leaves in the tree $T^*$, as otherwise,
+%  $T^*$ cannot explain $G(\Rl)/\Ro$.  Hence, leaves or the inner vertices
+%  of single-vertex trees $T(Q_i)$ cannot be identified with any other
+%  vertex of a distinct tree $T(Q_j)$.  Thus, in order to connect these
+%  trees inner vertices (except the the inner vertices of single-vertex
+%  trees) must be identified or edges and possibly extra vertices must be
+%  added.
+%
+%  By Theorem \ref{thm:connComp}, every tree $T(Q_i)$ is the unique least
+%  resolved tree for the respective connected component $Q_i$.  However, if
+%  $T(Q_i)$ is an edge, i.e., of the form $v_iw_i$ we modify this tree in
+%  Line \ref{step:edge} to obtain a tree isomorphic to $S_2$ with inner
+%  vertex $x_i$.  Note this modification is necessary, since on the one
+%  hand, leaves cannot be identified with any other vertex of a distinct
+%  tree $T(Q_j)$ and, on the other hand one cannot insert any edge incident
+%  to $v_i$ and $w_i$ to obtain connectedness in $T^*$, otherwise the leaves
+%  become inner vertices in $T^*$. Thus, in order to connect this $T(Q_i)$
+%  to other connected components without loosing the information about the
+%  leaves $v_i,w_i$ , it is necessary to add this extra vertex $x_i$.  By
+%  construction of $\lambda_i$ we still have $v_i\Rl w_i$.
+%
+%  Hence, in what follows we can assume that the trees $T(Q_1),\dots,T(Q_k)$
+%  are either single vertex graphs or have at least one inner vertex and two
+%  leaves.  Moreover, after Line \ref{step:edge}, none of such trees
+%  $T(Q_1),\dots,T(Q_k)$ can have less inner vertices in $T^*$. In other
+%  words, the trees $T(Q_1),\dots,T(Q_k)$ must be \emph{displayed} in any
+%  least resolved tree that explain $G(\Rl)/\Ro$.
+%        
+%  We continue to show that one cannot identify inner vertices of different
+%  trees $T(Q_i)$ and $T(Q_j)$ to obtain $T^*$.  Let $q'$ and $p'$ be
+%  arbitrary inner vertices of $T(Q_i)$ and $T(Q_j)$, respectively. If one
+%  of the trees, say $T(Q_i)$, consists only of this vertex $q'$, then
+%  identification of $q'$ and $p'$ leads to the loss of the leaf $q'$ in
+%  $T^*$, a contradiction.  Otherwise, assume none of the trees is a single
+%  vertex graph.  By construction, there is a leaf $q$, resp., $p$ incident
+%  to $q'$, resp., $p'$ with $\lambda_i(q,q')=\lambda_j(p,p')=0$.  Hence, if
+%  $q'$ and $p'$ are identified, then $p\Ro q$ and thus, they are in the
+%  same connected component of $G(\Rl)/\Ro$, a contradiction.  Thus, none of
+%  the vertices of any $T(Q_i)$ can be identified with any other vertex in a
+%  distinct tree $T(Q_j)$.  This also implies, that edges in $T(Q_i)$ and
+%  $T(Q_j)$ cannot be identified.
+%
+%  We continue to show that it is not possible to connect any vertex of
+%  $T(Q_i)$ and any vertex in a distinct tree $T(Q_j)$ by an edge.  Let $q'$
+%  and $p'$ be arbitrary vertices of $T(Q_i)$ and $T(Q_j)$,
+%  respectively. Assume one of the trees, say $T(Q_i)$, consists only of
+%  this vertex $q'$, and we add the edge $e=q'p'$.  If additionally $T(Q_i)$
+%  consists only of the vertex $p'$, then $p'\Rl q'$ or $p'\Ro q'$ in $T^*$,
+%  since $\lambda(e)\in \{0,1\}$, a contradiction.  If, $T(Q_i)$ has at
+%  least two leaves, then $p'$ must be an inner vertex. Otherwise, the leave
+%  $p'$ in $T(Q_i)$ would be an inner vertex in $T^*$ after insertion of the
+%  edge $e$, a contradiction.  By construction, there is a leaf $p$
+%  incident to $p'$ with $\lambda_j(p,p')=0$. Since $\lambda(e)\in \{0,1\}$,
+%  we obtain $p\Rl q'$ or $p\Ro q'$ in $T^*$, a contradiction.  Assume now,
+%  that none of the trees is a single vertex graph.  Similarly, $q'$, resp.,
+%  $p'$ must be inner vertices in $T(Q_i)$, resp., $T(Q_j)$.  Again, there
+%  is a leaf $q$ incident to $q'$ with $\lambda_j(q,q')=0$ and a leaf $p$
+%  incident to $p'$ with $\lambda_j(p,p')=0$.  Thus, $p\Rl q$ or $p\Ro q$ in
+%  $T^*$, since $\lambda(e)\in \{0,1\}$, a contradiction.
+%
+%  Hence, we must add a path to connect different trees in $T^*$.  The way,
+%  using the least number of vertices is to add one vertex on which along
+%  all these paths run. This is done by adding the tree $({z},\emptyset)$ to
+%  $T^*$.  We continue to connect the different trees to $z$ by insertion of
+%  an edge $zq'_i$, where $q'_i$ is an arbitrary inner vertex of $T(Q_i)$
+%  and label all these edges $e$ with $\lambda(e)=1$.  Thus, no two leaves
+%  $u$ and $w$ of distinct trees are in relation $\Ro$ or $\Rl$.  Since we
+%  have to add at least one vertex to obtain connectedness in $T^*$, the
+%  tree $T^*$ is a least resolved tree that explains $G(\Rl)/\Ro$ and unique
+%  up to the choice of the inner vertices that are connected to the vertex
+%  $z$.  \qed
+%}
 \end{proof}
 
 \subsection{Binary trees}
@@ -1754,7 +1832,7 @@ We summarize these arguments in
   Let $Q$ be a connected component in $G(\Rld)/\Ro$. Then $T(Q)$ is
   obtained from the unique \rev{minimally} resolved tree $T(\underline{Q})$ by
   choosing the unique vertex $v$ where all edges incident to $v$ are of the
-  form $vx$ as the root $\rho_Q$. \TODO{$T(Q)$ is minimally resolved}
+  form $vx$ as the root $\rho_Q$. %\TODO{$T(Q)$ is minimally resolved}
 \label{cor:Q-root}
 \end{cor}
 
@@ -1766,17 +1844,22 @@ displayed. Again, it is easy to verify that any edge-contradiction leads to
 a wrong pair of vertices in $\Rld$ or $\Ro$. Thus, $T(G(\Rld)/\Ro)$ is a
 least resolved tree for $\mathcal{R}_{G(\Rld)/\Ro}$.
 
-To obtain uniqueness one can apply similar arguments as in the proofs of
-Theorems \ref{thm:connComp} and \ref{thm:star-tree}. This yields the
-following characterization: \TODO{depends of Thm 3 rewrite!} 
+%To obtain uniqueness one can apply similar arguments as in the proofs of
+%Theorems \ref{thm:connComp} and \ref{thm:star-tree}. This yields the
+%following characterization: %\TODO{depends of Thm 3 rewrite!} 
 
 \begin{thm}
-  Let $Q_1,\dots Q_k$ be the connected components in $G(\Rld)/\Ro$.  Up to
-  the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
-  \ref{alg:all} for the construction of $T(\underline{Q_i})$ and the choice
-  of the root $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$, the tree $T^*
-  = T(G(\Rld)/\Ro))$ is the unique \rev{minimally} resolved tree that explains
-  $G(\Rld)/\Ro$.
+  Let $Q_1,\dots Q_k$ be the connected components in $G(\Rld)/\Ro$. 
+ \rev{ The tree $T(G(\Rld)/\Ro))$ with root 
+  $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$
+	is a least resolved tree that explains
+  $G(\Rld)/\Ro$.		}
+% Up to
+%  the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
+%  \ref{alg:all} for the construction of $T(\underline{Q_i})$ and the choice
+%  of the root $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$, the tree $T^*
+%  = T(G(\Rld)/\Ro))$ is the unique \rev{minimally} resolved tree that explains
+%  $G(\Rld)/\Ro$.
   \label{thm:star-tree-dir}
 \end{thm}
 
