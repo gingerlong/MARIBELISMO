@@ -799,7 +799,9 @@ Next we analyze the effect of edge contractions in $T$.
 	   is incident to exactly one 0-edge.
 
 		In addition,  if $(T,\lambda)$ 
-		is minimally resolve, then    all 0-edge are incident to leaves. 
+		is minimally resolve, then    all 0-edge are incident to leaves
+		and each inner vertex 
+	   is incident to exactly one 0-edge.
 }
 %\rev{  if the tree $(T,\lambda)$  is \rev{minimally resolved}, then 	%least resolved 
 %	all 0-edge are incident to leaves; and 
@@ -1104,16 +1106,19 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 
 \rev{
 \begin{lemma}
-  Let $(T,\lambda) \in \mathcal{T}$ and $Q= \varphi((T,\lambda))$. 
+  Let $(T,\lambda) \in \mathcal{T}$ and $Q= \varphi((T,\lambda)) \in \mathbb{T}$.
   The set  $\mathcal{T}$	contains \emph{all} least resolved trees
   that explain $Q$. 
 
 	Moreover, if $Q$
   is considered as a graph \mbox{$G(\Rl)/\Ro$} with vertex set $X$, then
-  $(T,\lambda)$ is the unique minimally resolved tree that explains $Q$.
+  $(T,\lambda)$ is the unique least resolved tree that explains $Q$
+	and therefore, the unique minimally resolved tree that explains $Q$.
 \end{lemma}
 \begin{proof}
-	We start with showing that $(T,\lambda)$ explains $Q$. By construction and
+	We start with showing that $(T,\lambda)$ explains $Q$. 
+	Note, since $Q\in\mathbb{T}$, the graph $Q$ must be connected. 
+	By construction and
 	since $Q= \varphi((T,\lambda))$, $T^* \simeq Q$ where $T^*$ is the tree
 	obtained from $T$ after contracting all 0-edges. Let $v,w\in X$ and assume
 	that that there is exactly a single $1$ along the path from $v$ to $w$ in
@@ -1132,13 +1137,16 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
  	$\mathcal{T}$. 
 
 	It remains to show that the least resolved tree $(T,\lambda)\in \mathcal{T}$
-	with $T^*\simeq Q$ and that explains $Q$ is minimally resolved. 
-	Assume there is a least resolved tree $(T',\lambda') \in \mathcal{T}$ that explains $Q$, 
-	but the unlabeled tree $T'^*$ obtained from $(T',\lambda')$ 
-	by contracting 0-edges is not isomorphic to $Q$. 
-	
-
-
+	with $T^*\simeq Q$ that explains $Q$ is minimally resolved. 
+	Assume there is another 
+	least resolved tree $(T',\lambda') \in \mathcal{T}$ with leaf set $V(Q)$
+   that explains $Q$. 
+	By Lemma \ref{lem:bijection}, there is a bijection between those 
+	$Q$ and elements in $\mathcal{T}$ for which  $T^*\simeq Q$. 
+	Thus,  $T'^*\simeq Q'\not\simeq Q \simeq T^*$. However, this implies that 
+	$T'\not\simeq T$. However, since in this case $(T',\lambda')$ explains $Q'$
+	and  $Q'\not\simeq Q$, the pair $(T',\lambda')$ cannot explain $Q$;
+	 a contradiction. 
 %	We show first that 	 $(T,\lambda)$ is a least resolved  
 %	tree that explains $Q$. Assume for contradiction that there is 
 %	an edge $vw$ that can be contracted. First observe that neither
@@ -1151,9 +1159,6 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 %	since $\Ro$ is discrete in $Q=G(\Rl)/\Ro$. 
 %	Hence, $(T,\lambda)$ is a least resolved  
 %	tree that explains $Q$. 
-
- -- due to bijkection -- its a unique least tree .. since 
-	and minimally is also least resolved -- a unqiue min. res. trees. 
 \end{proof}	
 }
 
