@@ -306,8 +306,10 @@ $v$, i.e., $L(v)$ is the set of all leaves for which $v$ is located on the
 unique path from $x\in L(v)$ to the root of $T$. The \emph{children} of an
 inner vertex $v$ are its direct descendants, i.e., vertices $w$ with $vw\in
 E(T)$ s.t.\ that $w$ is further away from the root than $v$.  A rooted or
-unrooted tree that has no vertices of degree two (with the possible
-exception that $T$ is a single, distinguished root node) and leaf set $X$
+unrooted tree that has no vertices of degree two \rev{(except possibly the root of $T$)}
+%(with the possible
+%exception that $T$ is a single, distinguished root node) 
+and leaf set $X$
 is called a \emph{phylogenetic tree $T$ (on $X$)}.
 
 Suppose $X'\subseteq X$. A phylogenetic tree $T$ on $X$ \emph{displays} a
@@ -785,14 +787,28 @@ Lemma \ref{lem:not-trans} can be generalized as follows.
 
 Next we analyze the effect of edge contractions in $T$.
 
-\begin{lemma}
+\begin{lemma} \label{lem:contract}
   Let $(T,\lambda)$ explain $G(\Rl)/\Ro$ and let $(T',\lambda')$ be the
   result of contracting an \rev{inner} edge  $e$ in $T$. If $\lambda(e)=0$
   then $(T',\lambda')$ explains $G(\Rl)/\Ro$. If $G(\Rl)/\Ro$ is connected
   and $\lambda(e)=1$ then $(T',\lambda')$ does not explain $G(\Rl)/\Ro$.
-  In particular, for connected graphs $G(\Rl)/\Ro$, the tree $(T,\lambda)$
-  is \rev{minimally resolved} 	%least resolved 
-	if and only if all 0-edge are incident to leaves.
+
+\rev{	Let $(T,\lambda)$ be a tree that explains the connected $G(\Rl)/\Ro$. 
+      Then, $(T,\lambda)$  is \rev{least resolved} if and only if
+      all 0-edge are incident to leaves and each inner vertex 
+	   is incident to exactly one 0-edge.
+
+		In addition,  if $(T,\lambda)$ 
+		is minimally resolve, then    all 0-edge are incident to leaves. 
+}
+%\rev{  if the tree $(T,\lambda)$  is \rev{minimally resolved}, then 	%least resolved 
+%	all 0-edge are incident to leaves; and 
+%	if all 0-edge are incident to leaves, then 
+%	$(T,\lambda)$ is least resolved. }
+%  In particular, for connected graphs $G(\Rl)/\Ro$, 
+% the tree $(T,\lambda)$
+%  is \rev{minimally resolved} 	%least resolved 
+%	if and only if all 0-edge are incident to leaves.
 \end{lemma}
 \begin{proof}
   Let $\Rl_T$, $\Ro_T$, $\Rl_{T'}$, and $\Ro_{T'}$ be the relations
@@ -800,7 +816,7 @@ Next we analyze the effect of edge contractions in $T$.
   $G(\Rl)/\Ro$ , we have $\Rl_T\,=\,\Rl/\Ro$. Moreover, since $\Ro_T$ is
   discrete, no two distinct leaves of $T$ are in relation $\Ro_T$.
 
-  If $\lambda(e)=0$, then contracting $e$ clearly preserves the property of
+  If $\lambda(e)=0$, then contracting the inner edge $e$ clearly preserves the property of
   $\Ro_{T'}$ being discrete.  Since only interior edges are allowed to be
   contracted, we have $L(T)=L(T')$. Therefore, $\Ro_T =\Ro_{T'}$ and the
   1-edges along any path from $x\in L(T)=L(T')$ to $y\in L(T)=L(T')$
@@ -812,12 +828,36 @@ Next we analyze the effect of edge contractions in $T$.
   along the unique path connecting $x'$ and $x''$. Consequently,
   contracting $e$ would make $x'$ and $x''$ non-adjacent w.r.t.\ the
   resulting relation.  Thus no 1-edge can be contracted in $T$ without
-  changing $G(\Rl)/\Ro$.
+  changing $G(\Rl)/\Ro$. 
 
-  If $(T,\lambda)$ is \rev{minimally resolved (and thus, least resolved)}, no edge can be contracted, and thus
-  no 0-edge can be located in the interior of $T$. For connected
-  $G(\Rl)/\Ro$ no interior 1-edge can be contracted in $T$ without changing
-  the corresponding $\Rl$ relation. \qed
+\rev{
+	Now assume that $(T,\lambda)$ is a least resolved 
+	tree that explains the connected graph $G(\Rl)/\Ro$. 
+	By the latter arguments, all inner edges of $(T,\lambda)$ 
+	must be 1-edges and thus any 0-edge must be incident to leaves. 
+	Assume for contradiction, that there 
+	is an inner vertex $w$ such that for all adjacent leaves $x',x''$
+	we have $\lambda(wx') = \lambda(wx'') = 1$. Thus, for any
+	such leaves we have $x'\not\Rl x''$. In particular, any 
+	path from $x'$ to any other leaf $y$ (distinct from the 
+	leaves adjacent to $w$) contains an inner
+	1-edge. Thus, $x'\not \Rl y$ for any such leaf of $T$. 
+	However, this immediately implies that $x'$ is an isolated
+	vertex in $G(\Rl)/\Ro$; a contradiction to the connectedness of  $G(\Rl)/\Ro$.
+	Furthermore, if there is an inner vertex $w$ such that for adjacent leaves $x',x''$
+	it holds that $\lambda(wx') = \lambda(wx'') = 0$, then $x'\Ro x''$;
+	a contradiction to $\Ro$ being discrete. 
+	Therefore, each inner vertex 	is incident to exactly one 0-edge.
+	
+	If $G(\Rl)/\Ro$ is connected and $(T,\lambda)$ explains $G(\Rl)/\Ro$
+	such that all 0-edge are incident to leaves, then all interior edges
+	are 1-edges. As shown, no inner 1-edge can be contracted in $T$ without changing
+   the corresponding $\Rl$ relation. Moreover, no leaf-edge can be contracted 
+	since $L(T) = V(G(\Rl)/\Ro)$. Hence, $(T,\lambda)$ is least resolved.
+
+	Finally, since any minimally resolved tree is least resolved, 
+	the last assertions follows from the latter arguments. 	}
+ \qed
 \end{proof}
 
 
@@ -1053,9 +1093,9 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 	as in Algorithm \ref{alg:Q}. 
 	It is easy to see that  $(T,\lambda) \in  \mathcal{T}$. 
 	Now consider $T^*$ obtained from  $(T,\lambda)$ by 
-	contracting all edges labeled $0$. .. We need to show that 
-	$T^* \simeq Q$.  ... 
- 	
+	contracting all edges labeled $0$. By construction, 
+	$T^* \simeq Q$ (see Fig. \ref{fig:bijection}). 
+	Hence,  $\varphi : \mathcal{T} \to  \mathbb{T}$ is bijective.
 \end{proof}
 }
 
@@ -1085,18 +1125,33 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 	$vw\not \in E(Q)$ and therefore, $v\not\Rl w$. 
 	Therefore, $(T,\lambda)$ explains $Q$. 
 
-	We show first that 	 $(T,\lambda)$ is a least resolved  
-	tree that explains $Q$. Assume for contradiction that there is 
-	an edge $vw$ that can be contracted. First observe that neither
-	$v$ nor $w$ can be a leaf, as otherwise contraction of this edge
-	would lead to a loss of information of the particular leaf $v$, resp., $w$. 
-	Hence, both $v$ and $w$ must be inner vertices. 
-	Both $v$ and $w$ have, by construction, an adjacent leave $v'\in X$ and $w'\in X$, 
-	respectively, such that $\lambda(vv') = \lambda(ww') = 0$. However, 
-	contracting  $vw$ would immediately lead to $v'\Ro w'$; a contradiction 
-	since $\Ro$ is discrete in $Q=G(\Rl)/\Ro$. 
-	Hence, $(T,\lambda)$ is a least resolved  
-	tree that explains $Q$. 
+	Note, by construction of the trees in $\mathcal{T}$ all 0-edges
+	are incident to a leaf. 
+	By Lemma \ref{lem:contract}, if any tree $(T,\lambda)\in  
+	\mathcal{T}$ explains some connected graph $G(\Rl)/\Ro$, 
+	then  $(T,\lambda)$ is a least resolved tree that explains 
+	$G(\Rl)/\Ro$. However, $\varphi$ maps only those  
+	$(T,\lambda)$ to 	some $Q$ for which $T^*\simeq Q$ 
+	(cf.\ Lemma \ref{lem:bijection}). 
+	Assume there is a least resolved tree $(T',\lambda') \in \mathcal{T}$ that explains $Q$, 
+	but the unlabeled tree $T'^*$ obtained from $(T',\lambda')$ 
+	by contracting 0-edges is not isomorphic to $Q$. 
+	
+
+
+%	We show first that 	 $(T,\lambda)$ is a least resolved  
+%	tree that explains $Q$. Assume for contradiction that there is 
+%	an edge $vw$ that can be contracted. First observe that neither
+%	$v$ nor $w$ can be a leaf, as otherwise contraction of this edge
+%	would lead to a loss of information of the particular leaf $v$, resp., $w$. 
+%	Hence, both $v$ and $w$ must be inner vertices. 
+%	Both $v$ and $w$ have, by construction, an adjacent leave $v'\in X$ and $w'\in X$, 
+%	respectively, such that $\lambda(vv') = \lambda(ww') = 0$. However, 
+%	contracting  $vw$ would immediately lead to $v'\Ro w'$; a contradiction 
+%	since $\Ro$ is discrete in $Q=G(\Rl)/\Ro$. 
+%	Hence, $(T,\lambda)$ is a least resolved  
+%	tree that explains $Q$. 
+
  -- due to bijkection -- its a unique least tree .. since 
 	and minimally is also least resolved -- a unqiue min. res. trees. 
 \end{proof}	
