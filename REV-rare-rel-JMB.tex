@@ -196,10 +196,10 @@ constraints. Furthermore, we can hope that the combination of such
 constraints can be utilized as a practicable method for phylogenetic
 inference. Recently we have shown that orthology assignments in large gene
 families imply triples that must be displayed by the underlying species
-tree \cite{HernandezRosales:12a,Hellmuth:13a}. In a phylogenomics setting a
-sufficient number of such triple constraints can be collected to yield
-fully resolved phylogenetic trees \cite{Hellmuth:15a}, see \cite{HW:16b}
-for an overview.
+tree \cite{HernandezRosales:12a,Hellmuth:13a} \TODO{also cite Marbrouk
+  stuff here?}. In a phylogenomics setting a sufficient number of such
+triple constraints can be collected to yield fully resolved phylogenetic
+trees \cite{Hellmuth:15a}, see \citet{HW:16b} for an overview.
 
 A plausible application scenario for our setting is the rearrangement of
 mitogenomes \cite{Sankoff:82}. Since mitogenomes are readily and cheaply
@@ -252,10 +252,10 @@ $\Pi$ is ``a single event along the path''. \rev{Although PCGs have been
 
 \subsection{Basic Notation} 
 
-We largely follow the notation and terminology of
-\cite{sem-ste-03a}. Throughout, $X$ denotes always a finite set of at least
-three taxa. We will consider both undirected and directed graphs $G=(V,E)$
-with finite vertex set $V(G)\coloneqq V$ and edge set or arc set
+We largely follow the notation and terminology of \rev{the book by}
+\citet{sem-ste-03a}. Throughout, $X$ denotes always a finite set of at
+least three taxa. We will consider both undirected and directed graphs
+$G=(V,E)$ with finite vertex set $V(G)\coloneqq V$ and edge set or arc set
 $E(G)\coloneqq E$.  For a digraph $G$ we write $\underline{G}$ for its
 \emph{underlying (undirected) graph} where $V(G)=V(\underline{G})$ and
 $\{x,y\}\in E(\underline{G})$ if $(x,y)\in E(G)$ or $(y,x)\in E(G)$. Thus,
@@ -315,12 +315,8 @@ phylogenetic tree $T'$ on $X'$ if $T'$ can be obtained from $T$ by a series
 of vertex deletions, edge deletions, and suppression of vertices of degree
 $2$ other than possibly the root, i.e., the replacement of an interior
 vertex $u$ and its two incident edges $e'$ and $e''$ by a single edge $e$,
-cf.\ \cite[Def.\ 6.1.2]{sem-ste-03a}. In the rooted case, only a vertex
-between two 
-%consecutive 
-\rev{incident} edges 
-%(as seen from the root) 
-may be suppressed;
+cf.\ \rev{Def.\ 6.1.2 in the book by \citet{sem-ste-03a}}. In the rooted
+case, only a vertex between two \rev{incident} edges may be suppressed;
 furthermore, if $X'$ is contained in a single subtree, then the $\lca{X'}$
 becomes the root of $T'$. It is useful to note that $T'$ is displayed by
 $T$ if and only if it can be obtained from $T$ step-wisely by removing an
@@ -408,13 +404,13 @@ R|=1$. It is well-known that any consistent strict-dense triple set
 $\mathcal R$ has a unique representation as a binary tree
 \cite[Suppl. Material]{Hellmuth:15a}.  For a consistent set $R$ of rooted
 triples we write $R\vdash \rt{(xy|z)}$ if any phylogenetic tree that
-displays all triples of $R$ also displays $\rt{(xy|z)}$. In a work of
-Bryant and Steel \cite{BS:95}, in which the authors extend and generalize
-the work of Dekker \cite{Dekker86}, it was shown under which conditions it
-is possible to infer triples by using only subsets $R'\subseteq R$, i.e.,
-under which conditions $R\vdash \rt{(xy|z)} \implies R'\vdash \rt{(xy|z)}$
-for some $R'\subseteq R$. In particular, we will use the following
-inference rules: \renewcommand{\theequation}{\roman{equation}}
+displays all triples of $R$ also displays $\rt{(xy|z)}$.
+\rev{\citet{BS:95} extend and generalized results by \citet{Dekker86} and
+  showed} under which conditions it is possible to infer triples by using
+only subsets $R'\subseteq R$, i.e., under which conditions $R\vdash
+\rt{(xy|z)} \implies R'\vdash \rt{(xy|z)}$ for some $R'\subseteq R$. In
+particular, we will use the following inference rules:
+\renewcommand{\theequation}{\roman{equation}}
 \begin{align}
   \{\rt{(ab|c)}, \rt{(ad|c)}\} &\vdash \rt{(bd|c)} 
   \label{eq:infRule1} \\
