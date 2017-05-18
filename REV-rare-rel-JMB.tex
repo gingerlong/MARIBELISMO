@@ -1104,35 +1104,35 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 
 \rev{
 \begin{lemma}
-  Let $(T,\lambda) \in \mathcal{T}$ and $Q= \varphi((T,\lambda))$.  If $Q$
+  Let $(T,\lambda) \in \mathcal{T}$ and $Q= \varphi((T,\lambda))$. 
+  The set  $\mathcal{T}$	contains \emph{all} least resolved trees
+  that explain $Q$. 
+
+	Moreover, if $Q$
   is considered as a graph \mbox{$G(\Rl)/\Ro$} with vertex set $X$, then
   $(T,\lambda)$ is the unique minimally resolved tree that explains $Q$.
 \end{lemma}
 \begin{proof}
-	We start with showing that 	$(T,\lambda)$  explains $Q$. 
-	Let $v,w\in X$ and assume that that there is exactly a single $1$
-	along the path from $v$ to $w$ in $(T,\lambda)$. 
-	Hence, after contracting all edges labeled $0$ we see 
-	that $vw\in E(T^*)$ where $T^* \simeq Q$	 and
-	thus $v\Rl w$. 
-	For the converse, observe first that no path between any two vertices 
-	in $(T,\lambda)$ can have only 0-edges (by construction). 
-	Thus, assume that there is more than one $1$
-	on the path between $v$ and $w$. Hence, after edge
-	after contracting all edges labeled $0$ we see that there is
-	still a path in the tree $T^*$ from  $v$ to $w$
-	with more than one edge. Since $T^* \simeq Q$, we have 
-	$vw\not \in E(Q)$ and therefore, $v\not\Rl w$. 
-	Therefore, $(T,\lambda)$ explains $Q$. 
+	We start with showing that $(T,\lambda)$ explains $Q$. By construction and
+	since $Q= \varphi((T,\lambda))$, $T^* \simeq Q$ where $T^*$ is the tree
+	obtained from $T$ after contracting all 0-edges. Let $v,w\in X$ and assume
+	that that there is exactly a single $1$ along the path from $v$ to $w$ in
+	$(T,\lambda)$. Hence, after contracting all edges labeled $0$ we see that
+	$vw\in E(T^*)$ where $T^* \simeq Q$ and thus $v\Rl w$. Note, no path between
+	any two vertices in $(T,\lambda)$ can have only 0-edges (by construction).
+	Thus, assume that there is more than a single 1-edge on the path between $v$
+	and $w$. Hence, after after contracting all edges labeled $0$ we see that
+	there is still a path in the tree $T^*$ from $v$ to $w$ with more than one
+	1-edge. Since $T^* \simeq Q$, we have $vw\not \in E(Q)$ and therefore,
+	$v\not\Rl w$. Thus, $(T,\lambda)$ explains $Q$. 
 
-	Note, by construction of the trees in $\mathcal{T}$ all 0-edges
-	are incident to a leaf. 
-	By Lemma \ref{lem:contract}, if any tree $(T,\lambda)\in  
-	\mathcal{T}$ explains some connected graph $G(\Rl)/\Ro$, 
-	then  $(T,\lambda)$ is a least resolved tree that explains 
-	$G(\Rl)/\Ro$. However, $\varphi$ maps only those  
-	$(T,\lambda)$ to 	some $Q$ for which $T^*\simeq Q$ 
-	(cf.\ Lemma \ref{lem:bijection}). 
+   By construction of the trees in $\mathcal{T}$ all 0-edges
+	are incident to a leaf. Thus, by Lemma \ref{lem:contract}, 
+	every least resolved tree that explains $Q$ is contained in 
+ 	$\mathcal{T}$. 
+
+	It remains to show that the least resolved tree $(T,\lambda)\in \mathcal{T}$
+	with $T^*\simeq Q$ and that explains $Q$ is minimally resolved. 
 	Assume there is a least resolved tree $(T',\lambda') \in \mathcal{T}$ that explains $Q$, 
 	but the unlabeled tree $T'^*$ obtained from $(T',\lambda')$ 
 	by contracting 0-edges is not isomorphic to $Q$. 
