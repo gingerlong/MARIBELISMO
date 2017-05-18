@@ -1324,10 +1324,11 @@ $T(Q_i)$.
   Let $Q_1,\dots Q_k$ be the connected components in $G(\Rl)/\Ro$.  Up to
   the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
   \ref{alg:all}, the tree $T^* = T(G(\Rl)/\Ro))$ is 
-	\mh{I removed unique and minimally -- I don't see it!}
-	\rev{a least} 
-%	the \rev{unique minimally} 
-	resolved tree that explains $G(\Rl)/\Ro$.
+	\rev{the unique minimally resolved  -- up to choice of inner vertex-- }
+%	\mh{I removed unique and minimally -- I don't see it!}
+%	\rev{a least} 
+%%	the \rev{unique minimally} 
+	tree that explains $G(\Rl)/\Ro$.
   \label{thm:star-tree}
 \end{thm}
 \begin{proof}
@@ -1336,9 +1337,23 @@ $T(Q_i)$.
   $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is a least resolved
   tree that explains $G(\Rl)/\Ro$.
 
-	To this end, we show first, that if $T_1,\dots, T_k$ explains $Q_1,\dots,Q_k$
-	respectively, then any tree 
-        
+	To this end consider an arbitrary tree $T'$ that explains $G(\Rl)/\Ro$. 
+	We show first that for any distinct connected component $Q_i$ and $Q_j$
+	the trees $T'(Q_i)$ and $T'(Q_j)$ (induced by the leaf set $V(Q_i)$, resp., $V(Q_j)$)
+	don't have any vertex in common. 
+	\TODO{proof idea -- take the phylogenetic tree $T'_i$ from $T'(Q_i)$ 
+	after contracting all inner 0-edges or 0-edges of degree 2 -- we end in
+	unique least resolved tree $T(Q_i)$ (by Thm. \ref{thm:connComp} 2nd statement -- deg2 edges must 
+    still be argued). Then old construction of "showing no inner vertex	
+	can be identified" can now be re-used. 
+	 } the rest is then  "for free"
+
+
+
+	To this end, we show first, that if $T_1,\dots, T_k$ explains $Q_1,\dots,Q_k$ (possibly not least resolved)
+	respectively, then any tree cannot be identified with other tree 
+	(due to Thm. \ref{thm:connComp} 2nd statement)
+	+ old construction. 
 
 \TODO{	Let $(T,\lambda)$ be the unique minimally resolved tree that explains 
 	the connected component $Q$ in $G(\Rl)/\Ro$ and 
@@ -1351,6 +1366,10 @@ $T(Q_i)$.
 
 	Therefore each $T(Q_i)$ is displayed in $T$
 	}
+
+
+	since displayed but no vertices in common they re either connecetd by
+	an edge or z-constrauctiom, (adding edge does not work).
 
  \rev{ First observe that all leaves of the trees $T(Q_i)$ 
 %  or the inner vertices
