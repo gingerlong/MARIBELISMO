@@ -863,176 +863,176 @@ Next we analyze the effect of edge contractions in $T$.
 \end{proof}
 
 
-\remove{ ******* START REMOVAL old Proof ***********
+%\remove{ ******* START REMOVAL old Proof ***********
 
-In order to link the relation $\Rl$ to the structure of the unrooted tree
-$T$, we consider first paths $(x_1,x_2,x_3,x_4)$ in $G(\Rl)/\Ro$ of length
-4. Corollary \ref{cor:cycle-free} implies that $x_1 \Rl x_2 \Rl x_3 \Rl
-x_4$.  There are several possible generic partial X-splits $A|B$ with
-$A,B\subseteq \{x_1,x_2,x_3,x_4\}$ that might be displayed by $T$. Clearly,
-the trivial splits of one vertex versus the other tree are always displayed
-by $T$. In addition there are three further possible quartets, i.e., splits
-between two disjoint pairs.  As we show next, only the quartet
-$x_1x_2|x_3x_4$ can be displayed.
+%In order to link the relation $\Rl$ to the structure of the unrooted tree
+%$T$, we consider first paths $(x_1,x_2,x_3,x_4)$ in $G(\Rl)/\Ro$ of length
+%4. Corollary \ref{cor:cycle-free} implies that $x_1 \Rl x_2 \Rl x_3 \Rl
+%x_4$.  There are several possible generic partial X-splits $A|B$ with
+%$A,B\subseteq \{x_1,x_2,x_3,x_4\}$ that might be displayed by $T$. Clearly,
+%the trivial splits of one vertex versus the other tree are always displayed
+%by $T$. In addition there are three further possible quartets, i.e., splits
+%between two disjoint pairs.  As we show next, only the quartet
+%$x_1x_2|x_3x_4$ can be displayed.
 
-\begin{lemma}
-  Let $(T,\lambda)$ be a tree that explains $G(\Rl)/\Ro$.  If
-  $(x_1,x_2,x_3,x_4)$ is a path in $G(\Rl)/\Ro$, then among all \rev{non-trivial}  
-	full splits of $\{x_1,x_2,x_3,x_4\}$ only the 
-	quartet $x_1x_2|x_3x_4$ is displayed by  $T$.
-  \label{lem:p4-quartet}
-\end{lemma}
-\begin{proof}
-  Note, since $(x_1,x_2,x_3,x_4)$ is a path in $G(\Rl)/\Ro$, we obtain that
-  $x_1\Rl x_2\Rl x_3\Rl x_4$. Moreover, Lemma \ref{lem:cycle-free} implies
-  that $x_1\not\Rl x_3,x_4$ and $x_2\not\Rl x_4$. Since by construction of
-  $G(\Rl)/\Ro$, neither $x_1\Ro x_3,x_4$ nor $x_2\Ro x_4$, we observe that
-  $x_1\Rk x_3,x_4$ and $x_2\Rk x_4$, $k>1$.
-	
-  We first consider trivial partial splits with vertices $x_1,x_2,x_3,$ and
-  $x_4$ s.t.\ there is no quartet on these vertices. Note, any other
-  trivial split is not informative, and a more refined information of the
-  topology of the tree $T$ is encoded in the respective quartets. Assume
-  there is such a trivial split $x_i|x_jx_kx_l$ with
-  $\{i,j,k,l\}=\{1,2,3,4\}$ s.t. there is no additional quartet on these
-  vertices. Since there is no quartet, the induced subtree on these four
-  vertices is of the form $\mathbb{P}(x_i,v)\cup
-  \mathbb{P}(v,x_j)\cup\mathbb{P}(v,x_k)\cup\mathbb{P}(v,x_l)$. Thus, it
-  suffices to continue the proof by considering a star $S_4$ with inner
-  vertex $v$ and leaves $x_1,\dots,x_4$, edge $e_r=x_rv$, $1\leq r\leq 4$
-  where $\lambda(e_r)=0$ iff $\mathbb{P}(v,x_r)$ contains only 0-edges and
-  $\lambda(e_r)=1$ otherwise.  Furthermore, the vertex $x_i$ is connected
-  to at least one vertex $x_r$, $r\in \{j,k,l\}$ in the path
-  $(x_1,x_2,x_3,x_4)$. W.l.o.g. assume $x_i$ is adjacent to $x_j$ and thus,
-  $x_i\Rl x_j$.  Note, $x_i$ is in relation $\Rl$ to at most one other
-  vertex.  Hence, there is at least one vertex, say $x_k$ s.t.\ $x_i
-  \not\Rl x_k$, and since $\Ro$ is assumed to be discrete $x_i \not\Ro
-  x_k$.  Thus, $\lambda(e_i)=\lambda(e_k)=1$.  Since $x_i\Rl x_j$, the path
-  $\lambda(e_j)=0$.  Moreover, it must hold that $\lambda(e_l)=1$, as
-  otherwise $x_j\Ro x_l$, a contradiction to $\Ro$ being discrete.  Now it
-  is easy to see that such a labeling cannot yield the path
-  $(x_1,x_2,x_3,x_4)$ in $G(\Rl)/\Ro$. Thus, whenever we have such a path
-  in $G(\Rl)/\Ro$ and there is a trivial split on these vertices, then
-  there must be a quartet on these four vertices, as well.
+%\begin{lemma}
+%  Let $(T,\lambda)$ be a tree that explains $G(\Rl)/\Ro$.  If
+%  $(x_1,x_2,x_3,x_4)$ is a path in $G(\Rl)/\Ro$, then among all \rev{non-trivial}  
+%	full splits of $\{x_1,x_2,x_3,x_4\}$ only the 
+%	quartet $x_1x_2|x_3x_4$ is displayed by  $T$.
+%  \label{lem:p4-quartet}
+%\end{lemma}
+%\begin{proof}
+%  Note, since $(x_1,x_2,x_3,x_4)$ is a path in $G(\Rl)/\Ro$, we obtain that
+%  $x_1\Rl x_2\Rl x_3\Rl x_4$. Moreover, Lemma \ref{lem:cycle-free} implies
+%  that $x_1\not\Rl x_3,x_4$ and $x_2\not\Rl x_4$. Since by construction of
+%  $G(\Rl)/\Ro$, neither $x_1\Ro x_3,x_4$ nor $x_2\Ro x_4$, we observe that
+%  $x_1\Rk x_3,x_4$ and $x_2\Rk x_4$, $k>1$.
+%	
+%  We first consider trivial partial splits with vertices $x_1,x_2,x_3,$ and
+%  $x_4$ s.t.\ there is no quartet on these vertices. Note, any other
+%  trivial split is not informative, and a more refined information of the
+%  topology of the tree $T$ is encoded in the respective quartets. Assume
+%  there is such a trivial split $x_i|x_jx_kx_l$ with
+%  $\{i,j,k,l\}=\{1,2,3,4\}$ s.t. there is no additional quartet on these
+%  vertices. Since there is no quartet, the induced subtree on these four
+%  vertices is of the form $\mathbb{P}(x_i,v)\cup
+%  \mathbb{P}(v,x_j)\cup\mathbb{P}(v,x_k)\cup\mathbb{P}(v,x_l)$. Thus, it
+%  suffices to continue the proof by considering a star $S_4$ with inner
+%  vertex $v$ and leaves $x_1,\dots,x_4$, edge $e_r=x_rv$, $1\leq r\leq 4$
+%  where $\lambda(e_r)=0$ iff $\mathbb{P}(v,x_r)$ contains only 0-edges and
+%  $\lambda(e_r)=1$ otherwise.  Furthermore, the vertex $x_i$ is connected
+%  to at least one vertex $x_r$, $r\in \{j,k,l\}$ in the path
+%  $(x_1,x_2,x_3,x_4)$. W.l.o.g. assume $x_i$ is adjacent to $x_j$ and thus,
+%  $x_i\Rl x_j$.  Note, $x_i$ is in relation $\Rl$ to at most one other
+%  vertex.  Hence, there is at least one vertex, say $x_k$ s.t.\ $x_i
+%  \not\Rl x_k$, and since $\Ro$ is assumed to be discrete $x_i \not\Ro
+%  x_k$.  Thus, $\lambda(e_i)=\lambda(e_k)=1$.  Since $x_i\Rl x_j$, the path
+%  $\lambda(e_j)=0$.  Moreover, it must hold that $\lambda(e_l)=1$, as
+%  otherwise $x_j\Ro x_l$, a contradiction to $\Ro$ being discrete.  Now it
+%  is easy to see that such a labeling cannot yield the path
+%  $(x_1,x_2,x_3,x_4)$ in $G(\Rl)/\Ro$. Thus, whenever we have such a path
+%  in $G(\Rl)/\Ro$ and there is a trivial split on these vertices, then
+%  there must be a quartet on these four vertices, as well.
 
-  We are now concerned with possible quartets that might be displayed by
-  $T$.  Let us denote the four terminal edges of the quadruple by $e_1$
-  through $e_4$, s.t.\ $e_i$ and $x_i$ are incident for $i=1,2,3,4$, and
-  let $e_0$ be the central edge. here are three possibilities:
-\begin{itemize}
-\item[(i)] $x_1x_2|x_3x_4$. Here $x_2\Rl x_1$ implies either (A)
-  $\lambda(e_2)=1$ and $\lambda(e_1)=0$, or (B) $\lambda(e_2)=0$ and
-  $\lambda(e_1)=1$.
-  \begin{enumerate}
-  \item[(A)] From $x_2\Rl x_3$ we obtain that $\lambda(e_0)=\lambda(e_3)=0$
-    and $x_3\Rl x_4$ implies $\lambda(e_4)=1$. Hence the path
-    $\mathbb{P}(x_1,x_4)$ along the edges $e_1,e_0,e_4$ contains exactly
-    one 1-edge.  Thus, $x_1\Rl x_4$, a contradiction to Lemma
-    \ref{lem:cycle-free}.
-  \item[(B)] We can use analogous arguments as in case (A).  If
-    $\lambda(e_3)=1$, then $\lambda(e_0)=\lambda(e_4)=0$, since $x_2\Rl
-    x_3$ and $x_3\Rl x_4$.  However, the latter yields $x_1\Rl x_4$; a
-    contradiction. Therefore, $\lambda(e_3)=0$ and $\lambda(e_4)=1$. Since
-    the path from $x_2$ to $x_3$ must contain a non-0-label, we must have
-    $\lambda(e_0)=1$. As desired this implies $x_1\Rl x_2 \Rl x_3 \Rl x_4$
-    and $x_i\not \Rl x_j$ for all $i,j$, with $|i-j|>1$.
-  \end{enumerate}
-\item[(ii)] $x_1x_3|x_2x_4$. Since $x_1\not\Rl x_3$ and $x_1\not\Ro x_3$ we
-  have $\lambda(e_1)=\lambda(e_3)=1$. Analogously, $x_2\not\Rl x_4$ and
-  $x_2\not\Ro x_4$ implies $\lambda(e_2)=\lambda(e_4)=1$. But then there
-  are at least two non-0-edge on the path $\mathbb{P}(x_1,x_2)$ along the
-  edges $e_1,e_0,e_2$, contradicting $x_1\Rl x_2$.
-\item[(iii)] $x_1x_4|x_2x_3$. From $x_1\not\Rl x_4$ and $x_1\not\Ro x_4$ we
-  obtain $\lambda(e_1)=1$ and $\lambda(e_4)=1$. Then $x_1\Rl x_2$ implies
-  that $\lambda(e_2)=\lambda(e_0)=0$ and $x_3\Rl x_4$ fixes
-  $\lambda(e_3)=0$.  But then there is no non-0-label along
-  $\mathbb{P}(x_2,x_3)$, contradicting $x_2\Rl x_3$.
-\end{itemize} 
-\ \qed
-\end{proof}
+%  We are now concerned with possible quartets that might be displayed by
+%  $T$.  Let us denote the four terminal edges of the quadruple by $e_1$
+%  through $e_4$, s.t.\ $e_i$ and $x_i$ are incident for $i=1,2,3,4$, and
+%  let $e_0$ be the central edge. here are three possibilities:
+%\begin{itemize}
+%\item[(i)] $x_1x_2|x_3x_4$. Here $x_2\Rl x_1$ implies either (A)
+%  $\lambda(e_2)=1$ and $\lambda(e_1)=0$, or (B) $\lambda(e_2)=0$ and
+%  $\lambda(e_1)=1$.
+%  \begin{enumerate}
+%  \item[(A)] From $x_2\Rl x_3$ we obtain that $\lambda(e_0)=\lambda(e_3)=0$
+%    and $x_3\Rl x_4$ implies $\lambda(e_4)=1$. Hence the path
+%    $\mathbb{P}(x_1,x_4)$ along the edges $e_1,e_0,e_4$ contains exactly
+%    one 1-edge.  Thus, $x_1\Rl x_4$, a contradiction to Lemma
+%    \ref{lem:cycle-free}.
+%  \item[(B)] We can use analogous arguments as in case (A).  If
+%    $\lambda(e_3)=1$, then $\lambda(e_0)=\lambda(e_4)=0$, since $x_2\Rl
+%    x_3$ and $x_3\Rl x_4$.  However, the latter yields $x_1\Rl x_4$; a
+%    contradiction. Therefore, $\lambda(e_3)=0$ and $\lambda(e_4)=1$. Since
+%    the path from $x_2$ to $x_3$ must contain a non-0-label, we must have
+%    $\lambda(e_0)=1$. As desired this implies $x_1\Rl x_2 \Rl x_3 \Rl x_4$
+%    and $x_i\not \Rl x_j$ for all $i,j$, with $|i-j|>1$.
+%  \end{enumerate}
+%\item[(ii)] $x_1x_3|x_2x_4$. Since $x_1\not\Rl x_3$ and $x_1\not\Ro x_3$ we
+%  have $\lambda(e_1)=\lambda(e_3)=1$. Analogously, $x_2\not\Rl x_4$ and
+%  $x_2\not\Ro x_4$ implies $\lambda(e_2)=\lambda(e_4)=1$. But then there
+%  are at least two non-0-edge on the path $\mathbb{P}(x_1,x_2)$ along the
+%  edges $e_1,e_0,e_2$, contradicting $x_1\Rl x_2$.
+%\item[(iii)] $x_1x_4|x_2x_3$. From $x_1\not\Rl x_4$ and $x_1\not\Ro x_4$ we
+%  obtain $\lambda(e_1)=1$ and $\lambda(e_4)=1$. Then $x_1\Rl x_2$ implies
+%  that $\lambda(e_2)=\lambda(e_0)=0$ and $x_3\Rl x_4$ fixes
+%  $\lambda(e_3)=0$.  But then there is no non-0-label along
+%  $\mathbb{P}(x_2,x_3)$, contradicting $x_2\Rl x_3$.
+%\end{itemize} 
+%\ \qed
+%\end{proof}
 
-Therefore a $P_4$ in $G(\Rl)/\Ro$ implies that a tree that explains
-$G(\Rl)/\Ro$ must contain a unique quadruple and a corresponding unique
-0/1-labeling of the five edges of the quadruples:
-\begin{equation}
-\label{eq:quadruple}
-  \includegraphics[width=0.15\textwidth]{quadruple.eps}
-\end{equation}
-Conversely, this quadruple explains the $P_4$. This 1-1 correspondence
-propagates to longer paths. A path of length $5$ can be viewed as a
-superposition of two paths of length $4$.  The key observation is that
-there is only a single tree with 5 leaves $x_i$, $i=1,\dots,5$ that
-displays the quadruples $x_1x_2|x_3x_4$ and $x_2x_3|x_4x_5$.  To see this,
-we apply Lemma \ref{lem:split-replace}, and conclude that a tree $T$
-displays $x_1x_2|x_3x_4$ and $x_2x_3|x_4x_5$ if and only if $T$ displays
-$x_1x_2|x_3x_4x_5$ and $x_1x_2x_3|x_4x_5$.  It is easy to see that there is
-only one such (least resolved) tree, which corresponds to the tree shown in
-Figure~\ref{fig:quintuple}.
+%Therefore a $P_4$ in $G(\Rl)/\Ro$ implies that a tree that explains
+%$G(\Rl)/\Ro$ must contain a unique quadruple and a corresponding unique
+%0/1-labeling of the five edges of the quadruples:
+%\begin{equation}
+%\label{eq:quadruple}
+%  \includegraphics[width=0.15\textwidth]{quadruple.eps}
+%\end{equation}
+%Conversely, this quadruple explains the $P_4$. This 1-1 correspondence
+%propagates to longer paths. A path of length $5$ can be viewed as a
+%superposition of two paths of length $4$.  The key observation is that
+%there is only a single tree with 5 leaves $x_i$, $i=1,\dots,5$ that
+%displays the quadruples $x_1x_2|x_3x_4$ and $x_2x_3|x_4x_5$.  To see this,
+%we apply Lemma \ref{lem:split-replace}, and conclude that a tree $T$
+%displays $x_1x_2|x_3x_4$ and $x_2x_3|x_4x_5$ if and only if $T$ displays
+%$x_1x_2|x_3x_4x_5$ and $x_1x_2x_3|x_4x_5$.  It is easy to see that there is
+%only one such (least resolved) tree, which corresponds to the tree shown in
+%Figure~\ref{fig:quintuple}.
 
-By induction and repeated application of Lemma \ref{lem:split-replace}, we
-conclude that a path on $n\geq 4$ vertices $x_1,\dots,x_n$ yields $n-3$
-non-trivial partial splits $x_1x_2|x_3\dots x_{n-1}x_n$,
-$x_1x_2x_3|x_4\dots x_{n-1}x_n$, \dots, $x_1x_2x_3x_4\dots
-x_{n-2}|x_{n-1}x_n$. We will refer to this set of partial splits as
-$\Sigma(P)$.
+%By induction and repeated application of Lemma \ref{lem:split-replace}, we
+%conclude that a path on $n\geq 4$ vertices $x_1,\dots,x_n$ yields $n-3$
+%non-trivial partial splits $x_1x_2|x_3\dots x_{n-1}x_n$,
+%$x_1x_2x_3|x_4\dots x_{n-1}x_n$, \dots, $x_1x_2x_3x_4\dots
+%x_{n-2}|x_{n-1}x_n$. We will refer to this set of partial splits as
+%$\Sigma(P)$.
 
-We can now summarize the discussion above in the following
-\begin{lemma} 
-\label{lem:1path}
-Let $(T,\lambda)$ be a tree that explains $G(\Rl)/\Ro$.  If $G(\Rl)/\Ro$
-contains the path $x_1x_2\dots x_n$ then $T$ displays a ``caterpillar''
-subtree $T_n^*$ consisting of $n-2$ internal vertices $u_2u_3\dots u_{n-1}$
-forming a path with all edges labeled $1$, vertices $x_1$ and $x_n$
-adjacent to $u_2$ and $u_{n-1}$, respectively, with an edge labeled $1$,
-and $x_i$ adjacent to $u_i$ with an 0-labeled edge for $2\le i\le n-1$.
-\end{lemma}
-Figure~\ref{fig:quintuple} shows the caterpillar $T_5^*$. 
+%We can now summarize the discussion above in the following
+%\begin{lemma} 
+%\label{lem:1path}
+%Let $(T,\lambda)$ be a tree that explains $G(\Rl)/\Ro$.  If $G(\Rl)/\Ro$
+%contains the path $x_1x_2\dots x_n$ then $T$ displays a ``caterpillar''
+%subtree $T_n^*$ consisting of $n-2$ internal vertices $u_2u_3\dots u_{n-1}$
+%forming a path with all edges labeled $1$, vertices $x_1$ and $x_n$
+%adjacent to $u_2$ and $u_{n-1}$, respectively, with an edge labeled $1$,
+%and $x_i$ adjacent to $u_i$ with an 0-labeled edge for $2\le i\le n-1$.
+%\end{lemma}
+%Figure~\ref{fig:quintuple} shows the caterpillar $T_5^*$. 
 
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=0.15\textwidth]{quintuple.eps}
-  \end{center}
-  \caption{\remove{Paths in the $\protect\Rl$ relation imply unique split
-      systems.  The upper right edge labeled tree is the caterpillar
-      $T_5^*$.}}
-\label{fig:quintuple}
-\end{figure}
-The latter results can also be used to establish an alternative and more
-elegant proof of Lemma \ref{lem:cycle-free} and Corollary
-\ref{cor:cycle-free}.
+%\begin{figure}[t]
+%  \begin{center}
+%    \includegraphics[width=0.15\textwidth]{quintuple.eps}
+%  \end{center}
+%  \caption{\remove{Paths in the $\protect\Rl$ relation imply unique split
+%      systems.  The upper right edge labeled tree is the caterpillar
+%      $T_5^*$.}}
+%\label{fig:quintuple}
+%\end{figure}
+%The latter results can also be used to establish an alternative and more
+%elegant proof of Lemma \ref{lem:cycle-free} and Corollary
+%\ref{cor:cycle-free}.
 
-\begin{proof}[Alternative proof of Cor.\ \ref{cor:cycle-free}.]
-  Suppose $G(\Rl)/\Ro$ contains a minimal length cycle $C=x_1x_2\dots x_n$
-  of length $n$. We know that $n>3$ since $G(\Rl)/\Ro$ is triangle-free by
-  Lemma~\ref{lem:notriangle}. Thus suppose $n\ge 4$. Then $C$ contains the
-  two paths $x_1x_2\dots x_n$ and $x_2\dots x_nx_1$ and thus by
-  Lemma~\ref{lem:1path}, $T$ displays in particular the splits
-  $x_1x_2|x_3\dots x_n$ and $x_2x_3\dots x_{n-1}|x_n x_1$. Lemma
-  \ref{lem:split-compa} implies that these two splits are incompatible,
-% Incompatibility: 
-%  $\{1,2\}\cap\{2,3,\dots,n-1\}=\{2\}$; 
-%  $\{1,2\}\cap\{1,n\}=\{1\}$;
-%  $\{3,\dots,n-1,n\}\cap\{2,3,\dots,n-1,n\}=\{3,\dots,n-1\}$; 
-%  $\{3,\dots,n-1,n\}\cap\{1,n\}=\{n\}$.
-  and thus cannot be derived from the same tree. Therefore $G(\Rl)/\Ro$ cannot
-  contain a cycle.
-\qed\end{proof}
+%\begin{proof}[Alternative proof of Cor.\ \ref{cor:cycle-free}.]
+%  Suppose $G(\Rl)/\Ro$ contains a minimal length cycle $C=x_1x_2\dots x_n$
+%  of length $n$. We know that $n>3$ since $G(\Rl)/\Ro$ is triangle-free by
+%  Lemma~\ref{lem:notriangle}. Thus suppose $n\ge 4$. Then $C$ contains the
+%  two paths $x_1x_2\dots x_n$ and $x_2\dots x_nx_1$ and thus by
+%  Lemma~\ref{lem:1path}, $T$ displays in particular the splits
+%  $x_1x_2|x_3\dots x_n$ and $x_2x_3\dots x_{n-1}|x_n x_1$. Lemma
+%  \ref{lem:split-compa} implies that these two splits are incompatible,
+%% Incompatibility: 
+%%  $\{1,2\}\cap\{2,3,\dots,n-1\}=\{2\}$; 
+%%  $\{1,2\}\cap\{1,n\}=\{1\}$;
+%%  $\{3,\dots,n-1,n\}\cap\{2,3,\dots,n-1,n\}=\{3,\dots,n-1\}$; 
+%%  $\{3,\dots,n-1,n\}\cap\{1,n\}=\{n\}$.
+%  and thus cannot be derived from the same tree. Therefore $G(\Rl)/\Ro$ cannot
+%  contain a cycle.
+%\qed\end{proof}
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.15\textwidth]{quintuple2.eps}
-\end{center}
-\caption{\remove{the simplest case of overlapping paths}}
-\label{fig:quint2}
-\end{figure} 
+%\begin{figure}
+%\begin{center}
+%\includegraphics[width=0.15\textwidth]{quintuple2.eps}
+%\end{center}
+%\caption{\remove{the simplest case of overlapping paths}}
+%\label{fig:quint2}
+%\end{figure} 
 
-Partially overlapping paths can be understood in terms of individual paths
-as in Figure~\ref{fig:quint2}.  Let $Q$ be a connected component in
-$G(\Rl)/\Ro$ with vertex set $X$.  The example of Figure~\ref{fig:quint2}
-motivates to construct a \rev{phylogenetic tree $T(Q)$ with leaf set $X$}
-from the tree $Q$ as outlined in Algorithm \ref{alg:Q}.
+%Partially overlapping paths can be understood in terms of individual paths
+%as in Figure~\ref{fig:quint2}.  Let $Q$ be a connected component in
+%$G(\Rl)/\Ro$ with vertex set $X$.  The example of Figure~\ref{fig:quint2}
+%motivates to construct a \rev{phylogenetic tree $T(Q)$ with leaf set $X$}
+%from the tree $Q$ as outlined in Algorithm \ref{alg:Q}.
 
-******* END REMOVAL old Proof *********** }
+%******* END REMOVAL old Proof *********** }
 
 \begin{algorithm}
 \caption{Compute $(T(Q), \lambda)$}
@@ -1114,6 +1114,7 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
   is considered as a graph \mbox{$G(\Rl)/\Ro$} with vertex set $X$, then
   $(T,\lambda)$ is the unique least resolved tree that explains $Q$
 	and therefore, the unique minimally resolved tree that explains $Q$.
+	\label{lem:Umin}
 \end{lemma}
 \begin{proof}
 	We start with showing that $(T,\lambda)$ explains $Q$. 
@@ -1167,104 +1168,118 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 \rev{As an immediate consequence of these considerations we obtain}
 \begin{thm}
   Let $Q$ be a connected component in $G(\Rl)/\Ro$ with vertex set $X$.
-  Then the tree $T(Q)$ constructed in Algorithm~\ref{alg:Q} is the unique
+  Then the tree $(T,\lambda)$ constructed in Algorithm~\ref{alg:Q} is the unique
   \rev{minimally} resolved tree that explains $Q$. 
+
+\rev{	Moreover, for any pair $(T',\lambda')$ that explains $Q$
+		the tree $T$ is obtained from $T'$ by contracting
+	all \emph{inner} 0-edges and $\lambda(e) = \lambda'(e)$
+	for all edges that are not contracted. }
   \label{thm:connComp}
 \end{thm}
-
-\remove{old below  remove ?? 
 \begin{proof}
-  We proceed by induction on the number of vertices $|X|=n$.  For $n=1$ and
-  $n=2$ there is nothing to show, since by construction $T(Q)=Q$ and $Q$
-  must have $|X|$ leaves.  For $n=3$ we have $Q=P_3=S_2$.
-
-  Let us first consider stars $Q=S_m$, $m=n+1\ge 3$, in general. Denote the
-  unique central vertex by $z$ and the leaves by $u_i$. Then the
-  construction of the theorem states that $T=S_{m+1}$ and all edges $u_iz'$
-  are labeled $1$, while $\lambda(zz')=0$. The tree $T$ must have $m+1$
-  leaves because there are $m+1$ vertices in $Q$. Hence, $T=S_{m+1}$ is the
-  unique least resolved tree that could possibly produce $Q$. It is now
-  easy to check that the edge labeling indeed yields $Q$. Furthermore, no
-  other edge labeling yields $Q$. To see this, it suffices to consider
-  explicitly all cases for $n=3$ since $S_2$ is an induced subgraph of
-  $S_m$ corresponding to an induced subgraph $P_3$ of $Q$.
-
-  For $n=4$, we have either $Q=S_3$ or $Q=P_4$. For the latter case the
-  claim coincides with the unique quadruples of Equ.~(\ref{eq:quadruple}).
-  If the tree $Q$ is not a star and $n\ge 4$ then every vertex of $Q$ is
-  contained in at least one path on $4$ vertices.
-
-  Now we proceed by induction. Suppose the claim of the theorem is true for
-  all $Q$ with up to $n$ vertices. Now suppose $Q$ has $n+1\ge 5$ vertices
-  and suppose $Q$ is not a star, since we already know that the claim holds
-  for all stars. Let $q$ be a leaf of the tree $Q$. We write
-  $Q\setminus\{q\}$ for the tree obtained from $Q$ in the following way:
-  First we remove the leaf $q$ and the attached edge. If the vertex $q'$ to
-  which $q$ was attached now has degree $2$, connectedness of $Q$ implies
-  that at least one of its incident edges is a 0-edge. This edge is
-  contracted.  By assumption, the claim holds for $Q'$. Let $\bar q$ be the
-  unique neighbor of $q$ in $Q$.
- 
-  We have to distinguish two cases: either (i) $\bar q$ is not a leaf in
-  $Q'$ or (ii) $\bar q$ is a leaf in $Q'$.
-
-  In Case (i), the tree $T'$ contains an interior node $\bar q'$ as well as
-  a leaf $\bar q$.  Using our construction recipe to construct $T$ we add
-  $q$ to $T'$ via an edge $\bar q' q$. If $T'$ was least resolved, so is
-  $T$ since we have not added an interior vertex.  We have two
-  possibilities to label $q\bar q'$.  Of course $\lambda(q\bar q')=0$
-  immediately yields a contradiction since the path $q-\bar q'-\bar q$ then
-  would have two edges labeled $0$, but $q$ and $\bar q$ are neighbors in
-  $Q$. One easily checks that $\lambda(q\bar q')=1$ is consistent with $Q$:
-  There is exactly a single 1-edge along $q-\bar q'-\bar q$ and two or more
-  1s along the paths to any other leaf, because all other path either
-  contain an interior edge (which always is labeled $1$) or it connects to
-  another neighbor of $\bar q'$. All the latter edges, however, are also
-  labeled $1$ by our previous construction.  And instead of $\bar q'$, $q$
-  cannot be connected to any other vertex of $T(Q')$.  because of $q\Rl
-  \bar q$, connected to any interior vertex of $T(Q')$ instead of $\bar q'$
-  would either cause $q\not \Rl \bar q$ or $q\Rl p$ where $p$ is not a
-  neighbor of $q$ in $Q$.
- 
-  For Case (ii), first we show that $q$ cannot be attached to any interior
-  node of $T'$. If $q$ is attached to the interior node which is the unique
-  neighbor $q_1$ of $\bar q$ in $Q'$, then the edge $qq_1$ must be labeled
-  by 0 to have $q\Rl \bar q$. Since $q_1$ is an interior vertex, it has
-  neighbors in $Q'$. Thus $q\Rl q_2$ where $q_2$ is any neighbor of
-  $q_1$. A contradiction to $\bar q$ be the unique neighbor of $q$ in
-  $Q$. If $q$ is attached to the interior node other than $q_1$, then the
-  path of $q$ to $\bar q$ in $Q$ will has at least two edges labeled by 1,
-  a contradiction to $q \Rl \bar q$.
-  
-  As a consequence of the results on paths above we know that for every
-  path $P_4$ $q-\bar q-u-v$ in $Q$ the tree $T$ must display the quadruple
-  $q\bar q|uv$. On the other hand, since $\bar q$ is a leaf in $Q'$, $u$
-  and $q$ are its only neighbors in $Q$ and thus $q\bar q|rs$ is a
-  quadruple displayed by $T$ for all $\{r,s\}\ne\{q,\bar q\}$ in
-  $T$. Therefore $q$ and $\bar q$ form a cherry in $T$, i.e., there must be
-  an interior vertex $\bar q'$ that has both $q$ and $\bar q$ as its
-  neighbors. Furthermore $\bar q'$ is necessarily connected to the rest of
-  $T$ by an interior edge. From the quadruple $q\bar q|uv$ corresponding to
-  the path $q-\bar q-u-v$, furthermore, we conclude that the interior edge
-  must connect $\bar q'$ with $u'$. It is clear that the resulting tree is
-  least resolved: None of the new edges $q\bar q'$, $\bar q\bar q'$, $\bar
-  q'u'$ can be contracted without contradiction, and all edges in the
-  remainder of the tree all edges are necessary due to the induction
-  hypothesis. Therefore the tree $T$ is uniquely defined by $Q$.
-
-  Let us now turn to the labeling of $T$. First we note that exactly one of
-  the edge $q\bar q'$ or $q'\bar q'$ must be labeled 1. Furthermore there
-  must be a single 1-edge along the paths $\bar q-\bar q'-u' -u$ and two or
-  more 1's along $q-\bar q'-u' -u$. Therefore $\lambda(q\bar q')=1$ and
-  $\lambda(q'\bar q')=0$. Using the known constraints within $T'$ as argued
-  previously we see that $\lambda(uu')=0$, and thus $\lambda(\bar
-  q'u')=1$. Hence, the labeling of $T$ is again unique and coincides with
-  the labeling described in the claim of the theorem.  
-
-  We therefore conclude that for all connected components $Q$ both the
-  least resolved tree and its labeling is uniquely determined.  \qed
+\rev{	The first statement follows from Lemma \ref{lem:contract} and \ref{lem:Umin}. 
+	To see the second statement, observe that Lemma \ref{lem:contract} implies 
+	that no inner 1-edge but every 0-edge can be contracted. 
+	Hence, after contracting all 0-edges, no edge can be contracted and thus, 
+	the resulting tree is least resolved. By Lemma \ref{lem:contract}, 
+	we obtain the result.}
+	\qed
 \end{proof}
-}
+
+%\remove{old below  remove ?? 
+%\begin{proof}
+%  We proceed by induction on the number of vertices $|X|=n$.  For $n=1$ and
+%  $n=2$ there is nothing to show, since by construction $T(Q)=Q$ and $Q$
+%  must have $|X|$ leaves.  For $n=3$ we have $Q=P_3=S_2$.
+
+%  Let us first consider stars $Q=S_m$, $m=n+1\ge 3$, in general. Denote the
+%  unique central vertex by $z$ and the leaves by $u_i$. Then the
+%  construction of the theorem states that $T=S_{m+1}$ and all edges $u_iz'$
+%  are labeled $1$, while $\lambda(zz')=0$. The tree $T$ must have $m+1$
+%  leaves because there are $m+1$ vertices in $Q$. Hence, $T=S_{m+1}$ is the
+%  unique least resolved tree that could possibly produce $Q$. It is now
+%  easy to check that the edge labeling indeed yields $Q$. Furthermore, no
+%  other edge labeling yields $Q$. To see this, it suffices to consider
+%  explicitly all cases for $n=3$ since $S_2$ is an induced subgraph of
+%  $S_m$ corresponding to an induced subgraph $P_3$ of $Q$.
+
+%  For $n=4$, we have either $Q=S_3$ or $Q=P_4$. For the latter case the
+%  claim coincides with the unique quadruples of Equ.~(\ref{eq:quadruple}).
+%  If the tree $Q$ is not a star and $n\ge 4$ then every vertex of $Q$ is
+%  contained in at least one path on $4$ vertices.
+
+%  Now we proceed by induction. Suppose the claim of the theorem is true for
+%  all $Q$ with up to $n$ vertices. Now suppose $Q$ has $n+1\ge 5$ vertices
+%  and suppose $Q$ is not a star, since we already know that the claim holds
+%  for all stars. Let $q$ be a leaf of the tree $Q$. We write
+%  $Q\setminus\{q\}$ for the tree obtained from $Q$ in the following way:
+%  First we remove the leaf $q$ and the attached edge. If the vertex $q'$ to
+%  which $q$ was attached now has degree $2$, connectedness of $Q$ implies
+%  that at least one of its incident edges is a 0-edge. This edge is
+%  contracted.  By assumption, the claim holds for $Q'$. Let $\bar q$ be the
+%  unique neighbor of $q$ in $Q$.
+% 
+%  We have to distinguish two cases: either (i) $\bar q$ is not a leaf in
+%  $Q'$ or (ii) $\bar q$ is a leaf in $Q'$.
+
+%  In Case (i), the tree $T'$ contains an interior node $\bar q'$ as well as
+%  a leaf $\bar q$.  Using our construction recipe to construct $T$ we add
+%  $q$ to $T'$ via an edge $\bar q' q$. If $T'$ was least resolved, so is
+%  $T$ since we have not added an interior vertex.  We have two
+%  possibilities to label $q\bar q'$.  Of course $\lambda(q\bar q')=0$
+%  immediately yields a contradiction since the path $q-\bar q'-\bar q$ then
+%  would have two edges labeled $0$, but $q$ and $\bar q$ are neighbors in
+%  $Q$. One easily checks that $\lambda(q\bar q')=1$ is consistent with $Q$:
+%  There is exactly a single 1-edge along $q-\bar q'-\bar q$ and two or more
+%  1s along the paths to any other leaf, because all other path either
+%  contain an interior edge (which always is labeled $1$) or it connects to
+%  another neighbor of $\bar q'$. All the latter edges, however, are also
+%  labeled $1$ by our previous construction.  And instead of $\bar q'$, $q$
+%  cannot be connected to any other vertex of $T(Q')$.  because of $q\Rl
+%  \bar q$, connected to any interior vertex of $T(Q')$ instead of $\bar q'$
+%  would either cause $q\not \Rl \bar q$ or $q\Rl p$ where $p$ is not a
+%  neighbor of $q$ in $Q$.
+% 
+%  For Case (ii), first we show that $q$ cannot be attached to any interior
+%  node of $T'$. If $q$ is attached to the interior node which is the unique
+%  neighbor $q_1$ of $\bar q$ in $Q'$, then the edge $qq_1$ must be labeled
+%  by 0 to have $q\Rl \bar q$. Since $q_1$ is an interior vertex, it has
+%  neighbors in $Q'$. Thus $q\Rl q_2$ where $q_2$ is any neighbor of
+%  $q_1$. A contradiction to $\bar q$ be the unique neighbor of $q$ in
+%  $Q$. If $q$ is attached to the interior node other than $q_1$, then the
+%  path of $q$ to $\bar q$ in $Q$ will has at least two edges labeled by 1,
+%  a contradiction to $q \Rl \bar q$.
+%  
+%  As a consequence of the results on paths above we know that for every
+%  path $P_4$ $q-\bar q-u-v$ in $Q$ the tree $T$ must display the quadruple
+%  $q\bar q|uv$. On the other hand, since $\bar q$ is a leaf in $Q'$, $u$
+%  and $q$ are its only neighbors in $Q$ and thus $q\bar q|rs$ is a
+%  quadruple displayed by $T$ for all $\{r,s\}\ne\{q,\bar q\}$ in
+%  $T$. Therefore $q$ and $\bar q$ form a cherry in $T$, i.e., there must be
+%  an interior vertex $\bar q'$ that has both $q$ and $\bar q$ as its
+%  neighbors. Furthermore $\bar q'$ is necessarily connected to the rest of
+%  $T$ by an interior edge. From the quadruple $q\bar q|uv$ corresponding to
+%  the path $q-\bar q-u-v$, furthermore, we conclude that the interior edge
+%  must connect $\bar q'$ with $u'$. It is clear that the resulting tree is
+%  least resolved: None of the new edges $q\bar q'$, $\bar q\bar q'$, $\bar
+%  q'u'$ can be contracted without contradiction, and all edges in the
+%  remainder of the tree all edges are necessary due to the induction
+%  hypothesis. Therefore the tree $T$ is uniquely defined by $Q$.
+
+%  Let us now turn to the labeling of $T$. First we note that exactly one of
+%  the edge $q\bar q'$ or $q'\bar q'$ must be labeled 1. Furthermore there
+%  must be a single 1-edge along the paths $\bar q-\bar q'-u' -u$ and two or
+%  more 1's along $q-\bar q'-u' -u$. Therefore $\lambda(q\bar q')=1$ and
+%  $\lambda(q'\bar q')=0$. Using the known constraints within $T'$ as argued
+%  previously we see that $\lambda(uu')=0$, and thus $\lambda(\bar
+%  q'u')=1$. Hence, the labeling of $T$ is again unique and coincides with
+%  the labeling described in the claim of the theorem.  
+
+%  We therefore conclude that for all connected components $Q$ both the
+%  least resolved tree and its labeling is uniquely determined.  \qed
+%\end{proof}
+%}
 
 We are now in the position to demonstrate how to obtain a least resolved
 tree that explains $G(\Rl)/\Ro$ also in the case that $G(\Rl)/\Ro$ itself
@@ -1320,7 +1335,23 @@ $T(Q_i)$.
   from the construction of $T^*$ it is easily seen that $T^*$ explains
   $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is a least resolved
   tree that explains $G(\Rl)/\Ro$.
+
+	To this end, we show first, that if $T_1,\dots, T_k$ explains $Q_1,\dots,Q_k$
+	respectively, then any tree 
         
+
+\TODO{	Let $(T,\lambda)$ be the unique minimally resolved tree that explains 
+	the connected component $Q$ in $G(\Rl)/\Ro$ and 
+	$(T',\lambda')$ be any other tree that explains $Q$. 
+	Moreover, let $(T^*,\lambda^*)$ be the tree obtained by 
+	contacting all inner 0-edges and all 0-edges
+   that are incident to a vertex of
+	degree two. 
+	inner edges by lemma -- and leaves -- $\lambda^*$.
+
+	Therefore each $T(Q_i)$ is displayed in $T$
+	}
+
  \rev{ First observe that all leaves of the trees $T(Q_i)$ 
 %  or the inner vertices
 %  of single-vertex trees 
@@ -1336,6 +1367,10 @@ $T(Q_i)$.
 %  trees) 
   must be identified or edges and possibly extra vertices must be
   added. }
+
+
+
+
 
   By Theorem \ref{thm:connComp}, every tree $T(Q_i)$ is the unique minimally
   resolved tree for the respective connected component $Q_i$.  However, if
