@@ -1207,7 +1207,7 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 We emphasize that although the minimally resolved tree that explains 
  $G(\Rl)/\Ro$ is unique, this statement is in general not satisfied for
 least resolved trees, see Figure \ref{fig:nonU-LRT}.
-
+ }
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1218,7 +1218,7 @@ least resolved trees, see Figure \ref{fig:nonU-LRT}.
 		However, only  $(T_1,\lambda_1)$ is minimally resolved. }
 \label{fig:nonU-LRT}
 \end{figure}
- }
+
 
 
 %\remove{old below  remove ?? 
@@ -1608,10 +1608,15 @@ $\underline{G(\Rld)/\Ro}$ of all connected components in $G(\Rld)/\Ro$ must
 be trees as well.  Moreover, since $\Ro$ is discrete in $G(\Rl)/\Ro$, it is
 also discrete in $G(\Rld)/\Ro$.
 
-Let $Q$ be a connected component in $\underline{G(\Rld)/\Ro}$.  \TODO{If
-  $Q$ is an isolated vertex or a single edge there is nothing to show.} In
-either case there is only a single tree and the position of its root in
-uniquely determined. Thus we assume that $Q$ contains at least three
+Let $Q$ be a connected component in ${G(\Rld)/\Ro}$.  \rev{If
+$Q$ is an isolated vertex or a single edge, there is only a single phylogenetic 
+rooted tree (a single vertex and a tree with two leaves and one inner root vertex, resp.)
+that explains $Q$  and the position of its root is
+uniquely determined.}
+%or a single edge there is nothing to show.} In
+%either case there is only a single tree and the position of its root in
+%uniquely determined. 
+Thus we assume that $Q$ contains at least three
 vertices from here on. By construction, any three vertices $x,y,z$ in a
 connected component $Q$ in $G(\Rld)/\Ro$ either induce a disconnected
 graph, or a tree on three vertices.  Let $x,y,z\in V(Q)$ induce such a
@@ -1629,10 +1634,15 @@ unique resolved tree $T(Q)$ that displays $Q$, see Fig.\
 
 \begin{figure}[t]
 \begin{center}
-\includegraphics[width=\textwidth]{fig4.eps}
+\includegraphics[width=\textwidth]{fig4.pdf}
 \end{center}
-\caption{Placing the root. For the tree $T_5^*$ of Fig.\
-  \ref{fig:quintuple} each of the tree inner vertices $a$, $b$, or $c$ can
+\caption{
+%	Placing the root. For the tree $T_5^*$ of Fig.\
+%  \ref{fig:quintuple} 
+	Placing the root. The tree $T$ in the upper left 
+	is the unique minimally resolved tree that explains 
+   $G(\Rl)/\Ro$ (shown below $T$). 
+  Each of the tree inner vertices $a$, $b$, or $c$  of $T$ can
   be chosen as the root, giving rise to three distinct relations $\Rld$.
   For the ``siblings'' in the unrooted tree $x_1,x_2$ as well as $x_4,x_5$
   it holds that $x_2\Rld x_1$ and $x_4\Rld x_5$ for all three distinct
@@ -1878,8 +1888,9 @@ $\mathcal{R}_Q$ and therefore, a least resolved tree that explains $Q$.
 
 We summarize these arguments in
 \begin{cor} 
-  Let $Q$ be a connected component in $G(\Rld)/\Ro$. Then $T(Q)$ is
-  obtained from the unique \rev{minimally} resolved tree $T(\underline{Q})$ by
+  Let $Q$ be a connected component in $G(\Rld)/\Ro$. \rev{Then a tree $T(Q)$ that explains $Q$ 
+	can be  obtained from the unique minimally resolved tree $T(\underline{Q})$ 
+  that explains $\underline{Q}$} by
   choosing the unique vertex $v$ where all edges incident to $v$ are of the
   form $vx$ as the root $\rho_Q$. %\TODO{$T(Q)$ is minimally resolved}
 \label{cor:Q-root}
@@ -1893,22 +1904,23 @@ displayed. Again, it is easy to verify that any edge-contradiction leads to
 a wrong pair of vertices in $\Rld$ or $\Ro$. Thus, $T(G(\Rld)/\Ro)$ is a
 least resolved tree for $\mathcal{R}_{G(\Rld)/\Ro}$.
 
-%To obtain uniqueness one can apply similar arguments as in the proofs of
-%Theorems \ref{thm:connComp} and \ref{thm:star-tree}. This yields the
-%following characterization: %\TODO{depends of Thm 3 rewrite!} 
+To obtain uniqueness of minimally resolved trees 
+one can apply similar arguments as in the proofs of
+Theorems \ref{thm:connComp} and \ref{thm:star-tree}. This yields the
+following characterization: %\TODO{depends of Thm 3 rewrite!} 
 
 \begin{thm}
   Let $Q_1,\dots Q_k$ be the connected components in $G(\Rld)/\Ro$. 
- \rev{ The tree $T(G(\Rld)/\Ro))$ with root 
-  $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$
-	is a least resolved tree that explains
-  $G(\Rld)/\Ro$.		}
-% Up to
-%  the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
-%  \ref{alg:all} for the construction of $T(\underline{Q_i})$ and the choice
-%  of the root $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$, the tree $T^*
-%  = T(G(\Rld)/\Ro))$ is the unique \rev{minimally} resolved tree that explains
-%  $G(\Rld)/\Ro$.
+% \rev{ The tree $T(G(\Rld)/\Ro))$ with root 
+%  $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$
+%	is a least resolved tree that explains
+%  $G(\Rld)/\Ro$.		}
+ Up to
+  the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
+  \ref{alg:all} for the construction of $T(\underline{Q_i})$ and the choice
+  of the root $\rho\in \{\rho_{Q_1},\ldots \rho_{Q_k}, z\}$, the tree $T^*
+  = T(G(\Rld)/\Ro))$ is the unique \rev{minimally} resolved tree that explains
+  $G(\Rld)/\Ro$.
   \label{thm:star-tree-dir}
 \end{thm}
 
@@ -2054,7 +2066,7 @@ Is this the case at least for labels and predicates satisfying (L1)
 
 	\TODO{We furthermore thank the referees for their valuable comments 
 	that helped to improve the paper, to shorten the proofs and for giving the
-	example in Fig.\ \ref{nonU-LRT}. }
+	example in Fig.\ \ref{fig:nonU-LRT}. }
 \end{acknowledgements}
 
 %\bibliographystyle{harvard}
