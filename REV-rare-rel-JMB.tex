@@ -1189,7 +1189,7 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 
 \rev{	Moreover, for any pair $(T',\lambda')$ that explains $Q$, 
 		the tree $T$ is obtained from $T'$ by contracting
-	all \emph{inner} 0-edges and $\lambda(e) = \lambda'(e)$
+	all \emph{inner} 0-edges and putting $\lambda(e) = \lambda'(e)$
 	for all edges that are not contracted. }
   \label{thm:connComp}
 \end{thm}
@@ -1202,6 +1202,24 @@ while all other edges $e$ in $T$ have label $\lambda(e)=1$.
 	we obtain the result.}
 	\qed
 \end{proof}
+
+\rev{
+We emphasize that although the minimally resolved tree that explains 
+ $G(\Rl)/\Ro$ is unique, this statement is in general not satisfied for
+least resolved trees, see Figure \ref{fig:nonU-LRT}.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=1\textwidth]{./nonUniqueLRT.pdf}
+\end{center}
+\caption{Left, a graph  $G(\Rl)/\Ro$ is shown. Both pairs $(T_1,\lambda_1)$ (middle)
+		and $(T_2,\lambda_2)$ (right) are least resolved trees that explain  $G(\Rl)/\Ro$. 
+		However, only  $(T_1,\lambda_1)$ is minimally resolved. }
+\label{fig:nonU-LRT}
+\end{figure}
+ }
+
 
 %\remove{old below  remove ?? 
 %\begin{proof}
@@ -2033,6 +2051,10 @@ Is this the case at least for labels and predicates satisfying (L1)
   This work was funded by the German Research Foundation (DFG) (Proj.\ No.\
   MI439/14-1 to PFS.).  YJL acknowledges support of National Natural
   Science Foundation of China (No. 11271255).
+
+	\TODO{We furthermore thank the referees for their valuable comments 
+	that helped to improve the paper, to shorten the proofs and for giving the
+	example in Fig.\ \ref{nonU-LRT}. }
 \end{acknowledgements}
 
 %\bibliographystyle{harvard}
