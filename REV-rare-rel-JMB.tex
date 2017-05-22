@@ -1354,49 +1354,19 @@ $T(Q_i)$.
 \end{algorithmic}
 \end{algorithm}
 
-\begin{thm}
-  Let $Q_1,\dots Q_k$ be the connected components in $G(\Rl)/\Ro$.  Up to
-  the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
-  \ref{alg:all}, the tree $T^* = T(G(\Rl)/\Ro))$ is a \rev{minimally
-    resolved tree that explains $G(\Rl)/\Ro$. It is unique up to the choice
-    of the $zq'_i$ in Line \ref{item:z}.}
-  \label{thm:star-tree}
-\end{thm}
+\rev{
+\begin{lemma}
+	Let $G(\Rl)/\Ro$ have connected components $Q_1,\dots Q_k$.
+	Let $T'$ be a tree that explains $G(\Rl)/\Ro$ and
+	$T'_i$ be the subtree of $T'$
+	with leaf set $V(Q_i)$ that is minimal w.r.t.\ inclusion, $1\le i\le k$. 
+	Then, $V(T'_i)\cap V(T'_j) =\emptyset$, $i\neq j$	 and, in particular, 
+   any two vertices in  $T'_i$ and $T'_j$, respectively, 
+	have distance at least two in $T'$.
+\label{lem:subtrees}
+\end{lemma}
 \begin{proof}
- \rev{ Since every tree $T(Q_i)$ explains a connected component in $G(\Rl)/\Ro$,
-  from the construction of $T^*$ it is easily seen that $T^*$ explains
-  $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is a minimally resolved
-  tree that explains $G(\Rl)/\Ro$.
-
-  To this end, consider an arbitrary tree $T'$ that explains $G(\Rl)/\Ro$.
-  Since $T'$ explains $G(\Rl)/\Ro$, it must explain each of the connected
-  components $Q_1,\dots Q_k$. Thus, each of the subtrees $T'_i$ of $T'$
-  with leaf set $V(Q_i)$ that are minimal w.r.t.\ inclusion must explain
-  the connected component $Q_i$, $1\le i \le k$.  Note the $T'_i$ may have
-  vertices of degree 2.
-
-  We show first that $T(Q_i)$ is obtained from $T'_i$ by contracting all
-  inner 0-edges and all 0-edges of degree 2.  If there are no vertices of
-  degree 2, we can immediately apply Thm.\ \ref{thm:connComp}.
-
-  If there is a vertex $v$ of degree 2, then $v$ cannot be incident to two
-  1-edges, as otherwise the relation explained by $T'_i$ would not be
-  connected, contradicting the assumption that $T'_i$ explains the
-  connected component $Q_i$.  Thus, if there is a vertex $v$ of degree 2 it
-  must be incident to a 0-edge $vw$.  Contracting $vw$ preserves the
-  property of $\Ro$ being discrete.  If $w$ is a leaf, we can contract the
-  edge $vw$ to a new leaf vertex $w$; if $vw$ is an inner edge we simply
-  contract it to some new interior vertex. In both cases, we can argue
-  analogously as in the proof of Lemma \ref{lem:contract} that the tree
-  obtained from $T'_i$ after contracting $vw$, still explains $Q_i$.  This
-  procedure can be repeated until no degree two vertices are in the
-  contracted $T'_i$.
-
-  In particular, the resulting tree is a phylogenetic tree that explains
-  $Q_i$. Now we continue to contract all remaining inner 0-edges and apply
-  Thm.\ \ref{thm:connComp} to conclude that we obtain $T(Q_i)$.
-
-  We continue to show that two distinct subtrees $T'_i$, and $T'_j$ do not
+	We start to show that two distinct subtrees $T'_i$, and $T'_j$ do not
   have a common vertex in $T'$.  If one of $Q_i$ or $Q_j$ is a single
   vertex graph, then $T'_i$ or $T'_j$ consists of a single leaf only, and
   the statement holds trivially.
@@ -1422,6 +1392,56 @@ $T(Q_i)$.
   $vw$ in $T'$, since otherwise either $x\Ro y$ (if $\lambda(vw)=0$) or
   $x\Rl y$ (if $\lambda(vw)=1$).  Hence, any two distinct vertices in
   $T'_i$ and $T'_j$ have distance at least two in $T'$.
+\end{proof}
+}
+
+\begin{thm}
+  Let $Q_1,\dots Q_k$ be the connected components in $G(\Rl)/\Ro$.  Up to
+  the choice of the vertices $q'_i$ in Line \ref{item:z} of Alg.\
+  \ref{alg:all}, the tree $T^* = T(G(\Rl)/\Ro))$ is a \rev{minimally
+    resolved tree that explains $G(\Rl)/\Ro$. It is unique up to the choice
+    of the $zq'_i$ in Line \ref{item:z}.}
+  \label{thm:star-tree}
+\end{thm}
+\begin{proof}
+ \rev{ Since every tree $T(Q_i)$ explains a connected component in $G(\Rl)/\Ro$,
+  from the construction of $T^*$ it is easily seen that $T^*$ explains
+  $G(\Rl)/\Ro$.  Now we need to prove that $T^*$ is a minimally resolved
+  tree that explains $G(\Rl)/\Ro$.
+
+  To this end, consider an arbitrary tree $T'$ that explains $G(\Rl)/\Ro$.
+  Since $T'$ explains $G(\Rl)/\Ro$, it must explain each of the connected
+  components $Q_1,\dots Q_k$. Thus, each of the subtrees $T'_i$ of $T'$
+  with leaf set $V(Q_i)$ that are minimal w.r.t.\ inclusion must explain
+  the connected component $Q_i$, $1\le i \le k$.  Note the $T'_i$ may have
+  vertices of degree 2.
+
+  We show first that $T(Q_i)$ is obtained from $T'_i$ by contracting all
+  inner 0-edges and all 0-edges of degree 2.  If there are no vertices of
+  degree 2, we can immediately apply Thm.\ \ref{thm:connComp}.
+  	
+  If there is a vertex $v$ of degree 2, then $v$ cannot be incident to two
+  1-edges, as otherwise the relation explained by $T'_i$ would not be
+  connected, contradicting the assumption that $T'_i$ explains the
+  connected component $Q_i$.  Thus, if there is a vertex $v$ of degree 2 it
+  must be incident to a 0-edge $vw$.  Contracting $vw$ preserves the
+  property of $\Ro$ being discrete.  If $w$ is a leaf, we can contract the
+  edge $vw$ to a new leaf vertex $w$; if $vw$ is an inner edge we simply
+  contract it to some new interior vertex. In both cases, we can argue
+  analogously as in the proof of Lemma \ref{lem:contract} that the tree
+  obtained from $T'_i$ after contracting $vw$, still explains $Q_i$.  This
+  procedure can be repeated until no degree two vertices are in the
+  contracted $T'_i$.
+
+  In particular, the resulting tree is a phylogenetic tree that explains
+  $Q_i$. Now we continue to contract all remaining inner 0-edges and apply
+  Thm.\ \ref{thm:connComp} to conclude that we obtain $T(Q_i)$.
+
+  
+  By Lemma \ref{lem:subtrees}, two distinct tree $T(Q_i)$ and $T(Q_j)$
+	do not have a common vertex, and moreover, 
+   any two vertices in  $T(Q_i)$ and $T(Q_j)$, respectively, 
+	have distance at least two in $T'$. 
 
   This implies that the construction as in Alg.\ \ref{alg:all} yields a
   least resolved tree.  In more detail, since the subtrees explaining $Q_i$
@@ -1516,10 +1536,15 @@ exactly one labeling.
  
 
 In order to obtain the complete set of binary trees that explain $G$ we can
-proceed as follows. If $G$ is connected, there is a single least resolved
+proceed as follows. If $G$ is connected, there is a single minimally resolved
 tree $T(G)$ explaining $G$. If $G$ is not connected then there are multiple
-least resolved trees $T$. They are described by
-Thm.~\ref{thm:star-tree}. For every such least resolved tree $T$ we iterate
+minimally resolved trees $T$. 
+
+\rev{Let $\mathcal{T}_{\mathrm{lrt}}$ be the set of all least resolved
+trees that explain $G$. 
+%They are described by
+%Thm.~\ref{thm:star-tree}. \rev{Let  be 
+For every such least resolved tree $T\in \mathcal{T}_{\mathrm{lrt}}$ } we iterate
 over all vertices $v_0$ of $T$ with degree $k>3$ and perform the following
 manipulations:
 \begin{itemize}
@@ -1534,8 +1559,8 @@ manipulations:
   i\leq k$.
 \item[{4.}] \rev{
   For each of the inserted binary trees $T'$ that results 
-  from a ``local'' star $S_k$ in step (3.) we must place an edge label. \\
-  Put $\lambda(xv_i)= \lambda(v_0v_i)$ for all terminal edges in $T'$.
+  from a ``local'' star $S_k$ in step 3. we must place an edge label. \\
+  Put $\lambda(xv_i)= \lambda(v_0v_i)$ for all terminal edges $xv_i$ in $T'$.
   If $S_k$ is of type  (a)  (cf.\, Lemma~\ref{lem:star}),  
  then choose an arbitrary 0/1-label  for the inner edges of $T'$.
  Otherwise, place the label 1 on each   inner edge. }
@@ -1546,15 +1571,16 @@ a 0/1 label on its inner edges.
 Let $t(k)$ denote the number of binary trees with $k$ leaves
 and $V_a,V_b$ be a partition of the inner vertices into those
 where the neighborhood corresponds to a star of type  (a) and (b), 
-respectively. 
-For a given least resolved tree $T$, the latter procedure
+respectively. Note, if $T$ is minimally resolved, then $|V_a|\le1$. 
+For a given least resolved tree $T\in  \mathcal{T}_{\mathrm{lrt}}$, the latter procedure
 yields the set of all
 $ (\prod_{v\in V_a} t(\mathrm{deg}(v_0))2^{\mathrm{deg}(v_0)-3} ) \cdot  (\prod_{v\in V_b} t(\mathrm{deg}(v_0) ) $
-pairwise distinct binary trees. The union of
-these tree sets and its particular labeling is then the set of all binary trees explaining $G$.  }
+pairwise distinct binary trees that one can obtain from $T$. The union of
+these tree sets and its particular labeling over all $T\in  \mathcal{T}_{\mathrm{lrt}}$
+is then the set of all binary trees explaining $G$.  }
 To establish the correctness of this procedure, we prove
 \newline
-\begin{lemma}\label{lem:binary}
+\begin{lemma}\label{lem:binary}  
   The procedure outlined above generates all binary trees $(T,\lambda)$
   representing $Q$.
 \end{lemma}
