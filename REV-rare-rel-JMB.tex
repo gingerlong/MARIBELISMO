@@ -280,7 +280,7 @@ A tree $T=(V,E)$ is a connected cycle-free undirected graph.  The vertices
 of degree $1$ in a tree are called leaves, all other vertices of $T$ are
 called \emph{inner vertices}. 
 An edge of $T$ is \emph{interior} if both of
-its end vertices are interior vertices. 
+its end vertices are interior vertices, otherwise the edge is called \emph{terminal}.
 \rev{For technical reasons, we call a vertex $v$ an inner vertex and leaf
 if $T$ is a single vertex graph
 $(\{v\},\emptyset)$. However, if 
@@ -1523,25 +1523,40 @@ Thm.~\ref{thm:star-tree}. For every such least resolved tree $T$ we iterate
 over all vertices $v_0$ of $T$ with degree $k>3$ and perform the following
 manipulations:
 \begin{itemize}
-\item[{1.}] Given a vertex $v_0$ of $T$ with degree $k>3$, denote its
-  neighbors by $v_1, v_2,\dots, v_k$. Delete vertex $v_0$ and its attached
+\item[{1.}] Given a vertex $v_0$ of $T$ with degree $k>3$, denote the set of 
+	its  neighbors $v_1, v_2,\dots, v_k$  by $N(v_0)$. 
+	Delete vertex $v_0$ and its attached
   edges from $T$, and rename the neighbors $v_i$ to $v_i'$ for all $1\leq
   i\leq k$. Denote the resulting forest by $F(v_0)$.
-\item[{2.}] Generate all binary trees with leaves $v_2,\dots, v_k$ as
-  described in the previous paragraph.
-  \TODO{how are the edges in these trees labeled}
+\item[{2.}] Generate all binary trees with leaves $v_1',\dots, v_k'$. 
 \item[{3.}] Each of these binary trees is inserted into a copy of the
   forest $F(v_0)$ by \rev{identifying} $v_i$ and $v_i'$ for all $1\leq
   i\leq k$.
+\item[{4.}] \rev{
+  For each of the inserted binary trees $T'$ that results 
+  from a ``local'' star $S_k$ in step (3.) we must place an edge label. \\
+  Put $\lambda(xv_i)= \lambda(v_0v_i)$ for all terminal edges in $T'$.
+  If $S_k$ is of type  (a)  (cf.\, Lemma~\ref{lem:star}),  
+ then choose an arbitrary 0/1-label  for the inner edges of $T'$.
+ Otherwise, place the label 1 on each   inner edge. }
 \end{itemize}
-For a given least resolved tree $T$ this yields the set of all
-$\prod_{v_0} t(\mathrm{deg}(v_0))$ pairwise distinct binary trees, where
-$t(k)$ denotes the number of binary trees with $k$ leaves. The union of
-these tree sets is then the set of all binary trees explaining $G$.  To
-establish the correctness of this procedure, we prove
+\rev{Note, each binary tree has $k-3$ inner edges \cite{sem-ste-03a}. 
+Hence, for a binary tree there are $2^{k-3}$ possibilities to place
+a 0/1 label on its inner edges. 
+Let $t(k)$ denote the number of binary trees with $k$ leaves
+and $V_a,V_b$ be a partition of the inner vertices into those
+where the neighborhood corresponds to a star of type  (a) and (b), 
+respectively. 
+For a given least resolved tree $T$, the latter procedure
+yields the set of all
+$ (\prod_{v\in V_a} t(\mathrm{deg}(v_0))2^{\mathrm{deg}(v_0)-3} ) \cdot  (\prod_{v\in V_b} t(\mathrm{deg}(v_0) ) $
+pairwise distinct binary trees. The union of
+these tree sets and its particular labeling is then the set of all binary trees explaining $G$.  }
+To establish the correctness of this procedure, we prove
 \newline
 \begin{lemma}\label{lem:binary}
-  The procedure outlined above generates all binary trees representing $Q$.
+  The procedure outlined above generates all binary trees $(T,\lambda)$
+  representing $Q$.
 \end{lemma}
 \begin{proof}
   It is easy to check that the trees we get are indeed binary trees, and
